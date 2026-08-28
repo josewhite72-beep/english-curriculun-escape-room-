@@ -1,0 +1,93 @@
+{
+  "grado": "3",
+  "cefr": "A1.1",
+  "scenario": "Discovering Our Classroom",
+  "salaId": "sala3",
+  "titulo": "Sala 3: Discovering Our Classroom",
+  "vocabularioScenario": ["desk", "book", "marker", "board", "shelf", "eraser", "paper", "chair", "crayon", "notebook"],
+  "gramaticaScenario": ["WH-questions (e.g., 'What's in your bag?')", "Prepositions of place (e.g., 'on the table')", "Present simple (e.g., 'The book is...')"],
+  "fraseFuncional": ["The book is on the table.", "It's here.", "It's on the shelf.", "Excuse me..."],
+  "estaciones": [
+    {
+      "id": "3a",
+      "theme": "What's in Your Bag?",
+      "destreza": "Mediation",
+      "learningOutcome": "Can follow oral directions for simple games. / Can explain keywords from readings in simpler terms.",
+      "candados": [
+        {
+          "id": "3a-1",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee la lista de objetos y responde: ¿cuál falta en tu mochila según la pista?",
+          "textoLectura": "In my bag I have a book, a marker, and a notebook. I don't have a crayon.",
+          "pregunta": "What object is NOT in the bag?",
+          "opciones": ["crayon", "book", "marker"],
+          "respuesta": "crayon",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "REKARM",
+          "respuesta": "MARKER",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3a-3",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee el texto y cuenta cuántos objetos escolares se mencionan en total.",
+          "textoLectura": "My bag has a book, a marker, a notebook, and an eraser.",
+          "pregunta": "How many school objects are mentioned?",
+          "respuesta": "4",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "CM4",
+      "piezaClave": "🔑5"
+    },
+    {
+      "id": "3b",
+      "theme": "The Book Is on the Table.",
+      "destreza": "Reading",
+      "learningOutcome": "Can describe the purpose of everyday texts. / Can outline the meaning of simple paragraphs.",
+      "candados": [
+        {
+          "id": "3b-1",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "The book is on the table. The crayon is in the bag. The eraser is on the desk.",
+          "pregunta": "Where is the book?",
+          "opciones": ["on the table", "on the shelf", "in the bag"],
+          "respuesta": "on the table",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "LEFSH",
+          "respuesta": "SHELF",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y cuenta cuántas veces aparece la palabra 'book'.",
+          "textoLectura": "The book is on the table. I like this book. It's my favorite book.",
+          "pregunta": "How many times does 'book' appear?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "TS3",
+      "piezaClave": "🔑6"
+    }
+  ],
+  "codigoMaestroParcial": ["CM4", "TS3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 3er grado (Scenario 'Discovering Our Classroom', A1.1).",
+  "metadata": {
+    "marca": "PanaMentorLabs",
+    "app": "Fuga de Aula",
+    "version": "prototipo-1.0"
+  }
+}

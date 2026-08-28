@@ -1,0 +1,89 @@
+{
+  "grado": "3",
+  "cefr": "A1.1",
+  "scenario": "This Beautiful Day",
+  "salaId": "sala4",
+  "titulo": "Sala 4: This Beautiful Day",
+  "vocabularioScenario": ["sun", "rain", "cloud", "wind", "weather", "umbrella", "sky", "coat", "boots", "shine"],
+  "gramaticaScenario": ["Contractions (e.g., 'I'm', 'it's')", "WH-questions (e.g., 'How do you feel today?')", "Present simple (e.g., 'I feel happy on sunny days.')"],
+  "fraseFuncional": ["I'm happy.", "It's raining.", "How do you feel?", "I feel happy.", "I need your umbrella, please."],
+  "estaciones": [
+    {
+      "id": "4a",
+      "theme": "It's Sunny. I'm Happy!",
+      "destreza": "Writing",
+      "learningOutcome": "Can write short role plays to be acted out based on class content. / Can create descriptive captions for images with simple words.",
+      "candados": [
+        {
+          "id": "4a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración con la palabra correcta.",
+          "oracion": "I feel ___ on sunny days.",
+          "opciones": ["happy", "umbrella", "boots"],
+          "respuesta": "happy",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "YSK",
+          "respuesta": "SKY",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "4a-3",
+          "tipo": "escritura-corta",
+          "instruccion": "Escribe una oración corta usando la palabra 'sun' y la frase 'I'm happy.'",
+          "ejemploModelo": "The sun is bright. I'm happy!",
+          "criterioValidacion": "La oración debe incluir la palabra 'sun' y la contracción 'I'm'.",
+          "pistaCodigo": "Si el maestro valida tu oración, toma la letra 'S'."
+        }
+      ],
+      "codigoEstacion": "HYS",
+      "piezaClave": "🔑7"
+    },
+    {
+      "id": "4b",
+      "theme": "It's Raining! I Need an Umbrella.",
+      "destreza": "Listening + Speaking (cierre)",
+      "learningOutcome": "Can recognize familiar sounds from audio sources. / Can participate in simple dialogues on familiar topics.",
+      "candados": [
+        {
+          "id": "4b-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y selecciona lo que necesita el personaje.",
+          "textoAudio": "It's raining. I need my umbrella, please.",
+          "opciones": ["umbrella", "coat", "boots"],
+          "respuesta": "umbrella",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4b-2",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona la palabra 'rain' o 'raining'.",
+          "textoAudio": "It's raining today. I don't like rain. But my plants love the rain!",
+          "pregunta": "How many times do you hear 'rain' or 'raining'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "4b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a, pregunta y responde: 'How do you feel when it rains?' Responde con 'I feel ___.'",
+          "criterioValidacion": "El maestro valida oralmente la respuesta usando la estructura 'I feel ___.'",
+          "pistaCodigo": "Si el maestro valida tu respuesta, toma la letra 'R'."
+        }
+      ],
+      "codigoEstacion": "U3R",
+      "piezaClave": "🔑8"
+    }
+  ],
+  "codigoMaestroParcial": ["HYS", "U3R"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 3er grado (Scenario 'This Beautiful Day', A1.1). Vocabulario y estandares vienen definidos a nivel de Scenario, por lo que ambos Themes los comparten.",
+  "metadata": {
+    "marca": "PanaMentorLabs",
+    "app": "Fuga de Aula",
+    "version": "prototipo-1.0"
+  }
+}
