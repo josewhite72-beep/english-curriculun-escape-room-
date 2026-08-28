@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141B2E">
+<title>Sala 2 · Fuga de Aula | PanaMentorLabs</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141B2E; --panel:#1E2B47; --panel-2:#243456;
+    --ink:#F2EFE3; --ink-dim:#B8C0D6;
+    --brass:#CC9F3F; --brass-dim:#8A6F32;
+    --teal:#3FA796; --coral:#E4572E;
+    --line:rgba(242,239,227,0.14); --radius:18px;
+    --font-display:'Baloo 2', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'Space Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(circle at 15% 0%, rgba(204,159,63,0.10), transparent 40%),
+      radial-gradient(circle at 85% 100%, rgba(63,167,150,0.10), transparent 45%),
+      var(--bg);
+    color:var(--ink); font-family:var(--font-body); min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  :focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+  button{font-family:inherit; cursor:pointer;}
+  .app{max-width:560px; margin:0 auto; padding:24px 20px 64px;}
+
+  .topbar{margin-bottom:18px;}
+  .backlink{color:var(--brass); font-size:13px; text-decoration:none;}
+  .brand{font-family:var(--font-mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--brass); margin-top:14px;}
+  .title{font-family:var(--font-display); font-weight:800; font-size:clamp(28px,8vw,36px); margin:6px 0 4px;}
+  .subtitle{color:var(--ink-dim); font-size:13.5px; margin:0;}
+
+  .station-dots{display:flex; gap:8px; margin:16px 0 22px;}
+  .dot{flex:1; height:6px; border-radius:4px; background:var(--panel-2);}
+  .dot.active{background:var(--brass);}
+  .dot.done{background:var(--teal);}
+
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; margin-bottom:16px;}
+  .station-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:4px;}
+  .station-theme{font-family:var(--font-display); font-weight:700; font-size:19px;}
+  .step-count{font-family:var(--font-mono); font-size:12px; color:var(--ink-dim);}
+  .station-skill{font-size:12px; color:var(--brass); text-transform:uppercase; letter-spacing:.06em; margin:0 0 16px;}
+
+  .instruction{font-size:15px; margin:0 0 14px; line-height:1.5;}
+  .passage{
+    background:var(--panel-2); border-radius:12px; padding:14px 16px; font-size:14.5px;
+    line-height:1.55; margin-bottom:14px; font-style:italic; color:var(--ink);
+  }
+  .audio-btn{
+    display:inline-flex; align-items:center; gap:8px; background:var(--panel-2);
+    border:1px solid var(--line); color:var(--ink); border-radius:10px; padding:10px 16px;
+    font-size:14px; margin-bottom:16px;
+  }
+  .audio-btn:hover{border-color:var(--teal);}
+  .scramble{
+    display:flex; gap:8px; justify-content:center; margin-bottom:16px; flex-wrap:wrap;
+  }
+  .scramble span{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--brass);
+    background:var(--panel-2); border-radius:8px; padding:8px 12px;
+  }
+  .options{display:flex; flex-direction:column; gap:10px; margin-bottom:8px;}
+  .opt-btn{
+    text-align:left; background:var(--panel-2); border:1.5px solid var(--line); color:var(--ink);
+    border-radius:12px; padding:13px 16px; font-size:15px;
+  }
+  .opt-btn:hover{border-color:var(--brass);}
+  .opt-btn.correct{border-color:var(--teal); background:rgba(63,167,150,.18);}
+  .opt-btn.incorrect{border-color:var(--coral); background:rgba(228,87,46,.15);}
+  .opt-btn:disabled{cursor:default;}
+  .text-input-row{display:flex; gap:10px; margin-bottom:8px;}
+  .text-input-row input{
+    flex:1; background:var(--panel-2); border:1.5px solid var(--line); border-radius:10px;
+    color:var(--ink); font-family:var(--font-mono); font-size:16px; padding:11px 14px; text-transform:uppercase;
+  }
+  .btn-check{
+    background:var(--brass); color:#22190B; border:none; border-radius:10px;
+    font-family:var(--font-display); font-weight:700; font-size:15px; padding:0 18px;
+  }
+  .feedback{font-size:14px; margin-top:10px; min-height:20px;}
+  .feedback.ok{color:var(--teal);}
+  .feedback.bad{color:var(--coral);}
+  .btn-next{
+    width:100%; margin-top:14px; background:var(--teal); color:#0B1B18; border:none;
+    border-radius:12px; font-family:var(--font-display); font-weight:700; font-size:16px; padding:13px;
+  }
+
+  .reward{text-align:center; padding:30px 20px;}
+  .reward .key{font-size:42px;}
+  .reward h2{font-family:var(--font-display); margin:8px 0 4px;}
+  .reward .code{font-family:var(--font-mono); font-size:22px; color:var(--teal); letter-spacing:.12em; margin:10px 0 18px;}
+  .btn-primary{
+    background:var(--brass); color:#22190B; border:none; border-radius:12px;
+    font-family:var(--font-display); font-weight:700; font-size:16px; padding:13px 22px; text-decoration:none; display:inline-block;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <a class="backlink" href="index.html">← Volver al mapa</a>
+    <div class="brand">PanaMentorLabs</div>
+    <h1 class="title" id="salaTitle">Sala 2</h1>
+    <p class="subtitle" id="salaSubtitle">Cargando…</p>
+  </div>
+
+  <div class="station-dots" id="stationDots"></div>
+
+  <div id="content"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  function slug(str){
+    return str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+  }
+  function stateKey(grado, equipoSlug){ return 'fuga_estado_g' + grado + '_' + equipoSlug; }
+
+  var params = new URLSearchParams(window.location.search);
+  var grado = params.get('grado') || '3';
+  var equipo = params.get('equipo');
+
+  if(!equipo){
+    window.location.href = 'index.html';
+    return;
+  }
+
+  var key = stateKey(grado, slug(equipo));
+  var state = JSON.parse(localStorage.getItem(key) || 'null');
+  if(!state){
+    window.location.href = 'index.html';
+    return;
+  }
+  state.estacionesCompletadas = state.estacionesCompletadas || {};
+
+  function saveState(){
+    localStorage.setItem(key, JSON.stringify(state));
+  }
+
+  var sala = null;
+  var stationIdx = 0;
+  var candadoIdx = 0;
+
+  fetch('data/grado' + grado + '_s2.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      sala = data;
+      document.getElementById('salaTitle').textContent = sala.titulo;
+      document.getElementById('salaSubtitle').textContent = 'Equipo ' + state.equipo + ' · CEFR ' + sala.cefr;
+      // arrancar en la primera estación no completada
+      stationIdx = sala.estaciones.findIndex(function(e){ return !state.estacionesCompletadas[e.id]; });
+      if(stationIdx === -1) stationIdx = sala.estaciones.length; // todo completo
+      renderDots();
+      renderStation();
+    })
+    .catch(function(err){
+      document.getElementById('content').innerHTML = '<div class="card"><p>No se pudo cargar el contenido de la sala. Verifica que data/grado' + grado + '_s2.json exista.</p></div>';
+    });
+
+  function renderDots(){
+    var wrap = document.getElementById('stationDots');
+    wrap.innerHTML = '';
+    sala.estaciones.forEach(function(e, i){
+      var d = document.createElement('div');
+      d.className = 'dot' + (state.estacionesCompletadas[e.id] ? ' done' : (i === stationIdx ? ' active' : ''));
+      wrap.appendChild(d);
+    });
+  }
+
+  function renderStation(){
+    var content = document.getElementById('content');
+    if(stationIdx >= sala.estaciones.length){
+      renderSalaComplete();
+      return;
+    }
+    var est = sala.estaciones[stationIdx];
+    candadoIdx = est.candados.findIndex(function(c){ return !isCandadoDone(est.id, c.id); });
+    if(candadoIdx === -1){
+      // estación llena de candados resueltos -> otorgar recompensa
+      markEstacionCompleta(est);
+      return;
+    }
+    renderCandado(est, est.candados[candadoIdx]);
+  }
+
+  function isCandadoDone(estId, candId){
+    return !!(state.candadosCompletados && state.candadosCompletados[candId]);
+  }
+  function markCandadoDone(candId){
+    state.candadosCompletados = state.candadosCompletados || {};
+    state.candadosCompletados[candId] = true;
+    saveState();
+  }
+  function markEstacionCompleta(est){
+    state.estacionesCompletadas[est.id] = true;
+    saveState();
+    renderDots();
+    renderReward(est);
+  }
+
+  function renderCandado(est, cand){
+    var content = document.getElementById('content');
+    var html = '<div class="card">';
+    html += '<div class="station-head"><span class="station-theme">' + est.theme + '</span>' +
+            '<span class="step-count">Candado ' + (candadoIdx+1) + '/' + est.candados.length + '</span></div>';
+    html += '<p class="station-skill">' + est.destreza + '</p>';
+    html += '<p class="instruction">' + cand.instruccion + '</p>';
+
+    if(cand.textoLectura){
+      html += '<div class="passage">' + cand.textoLectura + '</div>';
+    }
+    if(cand.textoAudio){
+      html += '<button class="audio-btn" id="playAudioBtn">▶ Escuchar</button>';
+    }
+    if(cand.letrasDesordenadas){
+      html += '<div class="scramble">' + cand.letrasDesordenadas.split('').map(function(ch){ return '<span>'+ch+'</span>'; }).join('') + '</div>';
+    }
+
+    if(cand.opciones){
+      html += '<div class="options" id="optionsWrap">';
+      cand.opciones.forEach(function(op){
+        html += '<button class="opt-btn" data-val="' + op.replace(/"/g,'&quot;') + '">' + op + '</button>';
+      });
+      html += '</div>';
+    } else {
+      html += '<div class="text-input-row"><input type="text" id="textAnswer" placeholder="Escribe tu respuesta" autocomplete="off"><button class="btn-check" id="checkBtn">Verificar</button></div>';
+    }
+    html += '<p class="feedback" id="feedback"></p>';
+    html += '<button class="btn-next" id="nextBtn" hidden>Siguiente →</button>';
+    html += '</div>';
+    content.innerHTML = html;
+
+    var audioBtn = document.getElementById('playAudioBtn');
+    if(audioBtn){
+      audioBtn.addEventListener('click', function(){
+        if('speechSynthesis' in window){
+          var u = new SpeechSynthesisUtterance(cand.textoAudio);
+          u.lang = 'en-US';
+          u.rate = 0.92;
+          speechSynthesis.cancel();
+          speechSynthesis.speak(u);
+        }
+      });
+    }
+
+    if(cand.opciones){
+      var buttons = content.querySelectorAll('.opt-btn');
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          evaluate(cand, btn.getAttribute('data-val'), buttons, btn);
+        });
+      });
+    } else {
+      document.getElementById('checkBtn').addEventListener('click', function(){
+        var val = document.getElementById('textAnswer').value;
+        evaluate(cand, val, null, null);
+      });
+      document.getElementById('textAnswer').addEventListener('keydown', function(ev){
+        if(ev.key === 'Enter'){ document.getElementById('checkBtn').click(); }
+      });
+    }
+  }
+
+  function evaluate(cand, value, buttons, clickedBtn){
+    var correct = String(value).trim().toLowerCase() === String(cand.respuesta).trim().toLowerCase();
+    var fb = document.getElementById('feedback');
+    if(buttons){
+      buttons.forEach(function(b){ b.disabled = true; });
+    }
+    if(correct){
+      fb.textContent = '¡Correcto! ✓';
+      fb.className = 'feedback ok';
+      if(clickedBtn) clickedBtn.classList.add('correct');
+      markCandadoDone(cand.id);
+      document.getElementById('nextBtn').hidden = false;
+      document.getElementById('nextBtn').addEventListener('click', function(){
+        candadoIdx++;
+        var est = sala.estaciones[stationIdx];
+        if(candadoIdx >= est.candados.length){
+          markEstacionCompleta(est);
+        } else {
+          renderCandado(est, est.candados[candadoIdx]);
+        }
+      });
+    } else {
+      fb.textContent = 'Intenta de nuevo.';
+      fb.className = 'feedback bad';
+      if(clickedBtn){
+        clickedBtn.classList.add('incorrect');
+        setTimeout(function(){
+          buttons.forEach(function(b){ b.disabled = false; b.classList.remove('incorrect'); });
+          fb.textContent = '';
+        }, 900);
+      }
+    }
+  }
+
+  function renderReward(est){
+    var content = document.getElementById('content');
+    content.innerHTML =
+      '<div class="card reward">' +
+        '<div class="key">' + est.piezaClave + '</div>' +
+        '<h2>¡Estación completada!</h2>' +
+        '<p class="subtitle">' + est.theme + '</p>' +
+        '<div class="code">' + est.codigoEstacion + '</div>' +
+        '<button class="btn-primary" id="continueBtn">Continuar</button>' +
+      '</div>';
+    document.getElementById('continueBtn').addEventListener('click', function(){
+      stationIdx++;
+      renderDots();
+      renderStation();
+    });
+  }
+
+  function renderSalaComplete(){
+    var content = document.getElementById('content');
+    var codes = sala.estaciones.map(function(e){ return e.codigoEstacion; }).join('-');
+    content.innerHTML =
+      '<div class="card reward">' +
+        '<div class="key">🏆</div>' +
+        '<h2>¡Sala 2 completa!</h2>' +
+        '<p class="subtitle">Ganaste ' + sala.estaciones.length + ' piezas del código maestro.</p>' +
+        '<div class="code">' + codes + '</div>' +
+        '<a class="btn-primary" href="index.html">Volver al mapa</a>' +
+      '</div>';
+  }
+})();
+</script>
+</body>
+</html>

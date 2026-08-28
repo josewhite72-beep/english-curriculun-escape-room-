@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141B2E">
+<title>Fuga de Aula | PanaMentorLabs</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141B2E;
+    --panel:#1E2B47;
+    --panel-2:#243456;
+    --ink:#F2EFE3;
+    --ink-dim:#B8C0D6;
+    --brass:#CC9F3F;
+    --brass-dim:#8A6F32;
+    --teal:#3FA796;
+    --coral:#E4572E;
+    --line:rgba(242,239,227,0.14);
+    --radius:18px;
+    --font-display:'Baloo 2', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'Space Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(circle at 15% 0%, rgba(204,159,63,0.10), transparent 40%),
+      radial-gradient(circle at 85% 100%, rgba(63,167,150,0.10), transparent 45%),
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  :focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+  button{font-family:inherit; cursor:pointer;}
+  .app{
+    max-width:560px;
+    margin:0 auto;
+    padding:28px 20px 64px;
+  }
+
+  /* ---------- Header ---------- */
+  .topbar{text-align:center; margin-bottom:26px;}
+  .brand{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--brass);
+  }
+  .title{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(34px,9vw,46px);
+    margin:6px 0 4px;
+    letter-spacing:.01em;
+  }
+  .title .accent{color:var(--teal);}
+  .subtitle{
+    color:var(--ink-dim);
+    font-size:14px;
+    margin:0;
+  }
+
+  /* ---------- Setup panel ---------- */
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px;}
+  .field label{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-dim);}
+  .field select, .field input{
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    padding:12px 14px;
+  }
+  .field select:disabled option:disabled{color:#6b7488;}
+  .btn-primary{
+    width:100%;
+    background:var(--brass);
+    color:#22190B;
+    border:none;
+    border-radius:12px;
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:17px;
+    padding:14px;
+    margin-top:4px;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn-primary:hover{background:#DDB251;}
+  .btn-primary:active{transform:scale(.98);}
+  .btn-primary:disabled{background:#4B4634; color:#8b8672; cursor:not-allowed;}
+  .hint{font-size:12px; color:var(--ink-dim); margin-top:10px; text-align:center;}
+
+  /* ---------- Team strip ---------- */
+  .team-strip{
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:12px 16px; margin-bottom:22px; font-size:14px;
+  }
+  .team-strip .who b{color:var(--teal);}
+  .link-btn{
+    background:none; border:none; color:var(--brass);
+    font-size:13px; text-decoration:underline; padding:4px;
+  }
+
+  /* ---------- Trail / map ---------- */
+  .map{position:relative; padding:8px 0 4px;}
+  .spine{
+    position:absolute; left:50%; top:14px; bottom:14px;
+    width:0; border-left:3px dashed var(--brass-dim);
+    transform:translateX(-50%);
+  }
+  .node{
+    position:relative;
+    display:flex; align-items:center; gap:16px;
+    margin:0 0 34px;
+    text-align:left;
+  }
+  .node:nth-child(even){flex-direction:row-reverse; text-align:right;}
+  .node:last-child{margin-bottom:6px;}
+  .medallion-wrap{
+    flex:none; width:78px; height:78px; border-radius:50%;
+    background:conic-gradient(var(--teal) calc(var(--pct)*1%), var(--panel-2) 0);
+    display:flex; align-items:center; justify-content:center;
+    padding:4px;
+  }
+  .medallion{
+    width:100%; height:100%; border-radius:50%;
+    background:var(--panel);
+    border:2px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .medallion svg{width:32px; height:32px; stroke:var(--brass); fill:none;}
+  .node.done .medallion{border-color:var(--teal);}
+  .node.done .medallion svg{stroke:var(--teal);}
+  .check{
+    position:absolute; bottom:-4px; right:-4px;
+    width:22px; height:22px; border-radius:50%;
+    background:var(--teal); color:#0B1B18;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:700; border:2px solid var(--bg);
+  }
+  .node-info{flex:1;}
+  .node-num{
+    font-family:var(--font-mono); font-size:11px; color:var(--brass);
+    letter-spacing:.1em;
+  }
+  .node-title{
+    font-family:var(--font-display); font-weight:700; font-size:19px; margin:2px 0 2px;
+  }
+  .node-scenario{font-size:12.5px; color:var(--ink-dim); margin:0 0 8px;}
+  .node-btn{
+    display:inline-block; background:var(--panel-2); border:1px solid var(--line);
+    color:var(--ink); font-size:13px; font-weight:600; padding:8px 14px;
+    border-radius:9px; text-decoration:none;
+  }
+  .node.done .node-btn{border-color:var(--teal); color:var(--teal);}
+  .node-progress{font-family:var(--font-mono); font-size:11px; color:var(--ink-dim); margin-left:8px;}
+
+  /* ---------- Keyring ---------- */
+  .keyring{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 20px; margin-top:8px;
+  }
+  .keyring h2{
+    font-family:var(--font-display); font-size:16px; margin:0 0 12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .slots{display:flex; gap:8px; flex-wrap:wrap;}
+  .slot{
+    width:34px; height:34px; border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    border:1.5px dashed var(--brass-dim);
+    color:var(--brass-dim);
+  }
+  .slot.filled{
+    background:var(--teal); border:1.5px solid var(--teal); color:#0B1B18;
+  }
+  .master-code{
+    margin-top:16px; padding-top:14px; border-top:1px dashed var(--line);
+    font-family:var(--font-mono); font-size:13px; text-align:center;
+  }
+  .master-code .label{color:var(--ink-dim); font-size:11px; letter-spacing:.1em; text-transform:uppercase;}
+  .master-code .code{
+    font-size:20px; letter-spacing:.12em; color:var(--teal); margin-top:6px;
+    animation:glow 2.2s ease-in-out infinite;
+  }
+  @keyframes glow{
+    0%,100%{text-shadow:0 0 0 rgba(63,167,150,0);}
+    50%{text-shadow:0 0 14px rgba(63,167,150,.55);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .master-code .code{animation:none;}
+  }
+
+  /* ---------- Footer ---------- */
+  .footer{
+    display:flex; justify-content:center; gap:18px; margin-top:30px;
+  }
+  .ghost-btn{
+    background:none; border:1px solid var(--line); color:var(--ink-dim);
+    font-size:12.5px; padding:9px 14px; border-radius:9px;
+  }
+  .ghost-btn[disabled]{opacity:.5; cursor:not-allowed;}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">PanaMentorLabs</div>
+    <h1 class="title">Fuga de <span class="accent">Aula</span></h1>
+    <p class="subtitle">Demuestra lo que sabes en inglés y escapa de las 4 salas</p>
+  </header>
+
+  <section class="card" id="setupPanel">
+    <div class="field">
+      <label for="gradoSelect">Grado</label>
+      <select id="gradoSelect">
+        <option value="1" disabled>1er grado (próximamente)</option>
+        <option value="2" disabled>2do grado (próximamente)</option>
+        <option value="3" selected>3er grado</option>
+        <option value="4" disabled>4to grado (próximamente)</option>
+        <option value="5" disabled>5to grado (próximamente)</option>
+        <option value="6" disabled>6to grado (próximamente)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="equipoInput">Nombre del equipo</label>
+      <input id="equipoInput" placeholder="Ej. Equipo Tigres" maxlength="24" autocomplete="off">
+    </div>
+    <button class="btn-primary" id="startBtn" disabled>Comenzar / Continuar</button>
+    <p class="hint">Cada equipo guarda su propio progreso en este dispositivo.</p>
+  </section>
+
+  <div id="playArea" hidden>
+    <div class="team-strip">
+      <div class="who">Jugando: <b id="equipoLabel"></b> · Grado <span id="gradoLabel"></span></div>
+      <button class="link-btn" id="switchTeamBtn">Cambiar equipo</button>
+    </div>
+
+    <section class="map" id="mapSection">
+      <div class="spine"></div>
+      <div id="nodesContainer"></div>
+    </section>
+
+    <section class="keyring">
+      <h2>🔑 Código Maestro</h2>
+      <div class="slots" id="slots"></div>
+      <div class="master-code" id="masterCodeBlock" hidden>
+        <div class="label">¡Sala liberada! Código maestro</div>
+        <div class="code" id="masterCodeValue"></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <a class="ghost-btn" id="proyectorBtn" href="proyector.html" style="text-decoration:none; display:inline-block;">Modo Proyector</a>
+      <button class="ghost-btn" id="resetBtn">Reiniciar progreso</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ICONS = {
+    "Places I Can Go": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1.6"/><path d="M12 3v18M3 12h18" stroke-width="1"/><path d="M12 8l2.4 3.6L18 14l-3.6 1L12 18l-1-3.6L8 13l3.4-1.4Z" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+    "A Polite Request": '<svg viewBox="0 0 24 24"><path d="M4 5h13a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H10l-4 4v-4H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 11c.5-1.5 2-2 3-1s.3 2.4-1 3" stroke-width="1.3" stroke-linecap="round"/></svg>',
+    "Discovering Our Classroom": '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="1.5" stroke-width="1.6"/><path d="M8 20h8M12 16v4" stroke-width="1.4" stroke-linecap="round"/><path d="M7.5 10.5l2 2 3.5-4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    "This Beautiful Day": '<svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.4" stroke-width="1.6"/><path d="M9 2.5v2M9 13v2M2.5 9h2M13 9h2M4.6 4.6l1.4 1.4M11 11l1.4 1.4" stroke-width="1.3" stroke-linecap="round"/><path d="M13 17.5a4 4 0 0 0 0-8c-.5 0-1 .08-1.4.22A5 5 0 0 0 3 14.5 3.5 3.5 0 0 0 6.5 18h6.7Z" stroke-width="1.4" stroke-linejoin="round"/></svg>'
+  };
+
+  var els = {
+    gradoSelect: document.getElementById('gradoSelect'),
+    equipoInput: document.getElementById('equipoInput'),
+    startBtn: document.getElementById('startBtn'),
+    setupPanel: document.getElementById('setupPanel'),
+    playArea: document.getElementById('playArea'),
+    equipoLabel: document.getElementById('equipoLabel'),
+    gradoLabel: document.getElementById('gradoLabel'),
+    switchTeamBtn: document.getElementById('switchTeamBtn'),
+    nodesContainer: document.getElementById('nodesContainer'),
+    slots: document.getElementById('slots'),
+    masterCodeBlock: document.getElementById('masterCodeBlock'),
+    masterCodeValue: document.getElementById('masterCodeValue'),
+    resetBtn: document.getElementById('resetBtn'),
+    proyectorBtn: document.getElementById('proyectorBtn')
+  };
+
+  function slug(str){
+    return str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+  }
+  function stateKey(grado, equipoSlug){ return 'fuga_estado_g' + grado + '_' + equipoSlug; }
+
+  els.equipoInput.addEventListener('input', function(){
+    els.startBtn.disabled = els.equipoInput.value.trim().length === 0;
+  });
+
+  els.startBtn.addEventListener('click', function(){
+    var grado = els.gradoSelect.value;
+    var equipo = els.equipoInput.value.trim();
+    if(!equipo) return;
+    loadOrCreateState(grado, equipo);
+  });
+
+  els.switchTeamBtn.addEventListener('click', function(){
+    els.playArea.hidden = true;
+    els.setupPanel.hidden = false;
+  });
+
+  els.resetBtn.addEventListener('click', function(){
+    if(!currentKey) return;
+    if(confirm('¿Borrar el progreso de "' + currentState.equipo + '" en esta sala? Esta acción no se puede deshacer.')){
+      localStorage.removeItem(currentKey);
+      loadOrCreateState(currentState.grado, currentState.equipo);
+    }
+  });
+
+  var currentKey = null;
+  var currentState = null;
+  var salaData = [];
+
+  function loadOrCreateState(grado, equipo){
+    var eqSlug = slug(equipo);
+    var key = stateKey(grado, eqSlug);
+    var saved = localStorage.getItem(key);
+    var state;
+    if(saved){
+      state = JSON.parse(saved);
+    } else {
+      state = {
+        grado: grado,
+        equipo: equipo,
+        piezas: [null,null,null,null,null,null,null,null],
+        estacionesCompletadas: {},
+        tiempoInicio: Date.now()
+      };
+      localStorage.setItem(key, JSON.stringify(state));
+    }
+    currentKey = key;
+    currentState = state;
+    els.equipoLabel.textContent = state.equipo;
+    els.gradoLabel.textContent = grado;
+    els.setupPanel.hidden = true;
+    els.playArea.hidden = false;
+    fetchSalas(grado);
+  }
+
+  function fetchSalas(grado){
+    els.nodesContainer.innerHTML = '<p class="hint">Cargando salas…</p>';
+    Promise.all([1,2,3,4].map(function(n){
+      return fetch('data/grado' + grado + '_s' + n + '.json').then(function(r){
+        if(!r.ok) throw new Error('missing sala ' + n);
+        return r.json();
+      });
+    })).then(function(results){
+      salaData = results;
+      renderMap();
+      renderKeyring();
+    }).catch(function(err){
+      els.nodesContainer.innerHTML = '<p class="hint">No se pudo cargar el contenido de las salas (' + err.message + '). Verifica que los archivos existan en /data/.</p>';
+    });
+  }
+
+  function stationProgress(salaId){
+    var comp = currentState.estacionesCompletadas || {};
+    var ids = salaId + 'a,' + salaId + 'b';
+    // salaId here is like "sala1" -> station ids are "1a","1b"
+    return null;
+  }
+
+  function renderMap(){
+    els.nodesContainer.innerHTML = '';
+    salaData.forEach(function(sala, idx){
+      var n = idx + 1;
+      var est = sala.estaciones;
+      var comp = currentState.estacionesCompletadas || {};
+      var doneCount = est.filter(function(e){ return comp[e.id]; }).length;
+      var pct = Math.round((doneCount / est.length) * 100);
+      var isDone = doneCount === est.length;
+
+      var node = document.createElement('div');
+      node.className = 'node' + (isDone ? ' done' : '');
+
+      var icon = ICONS[sala.scenario] || ICONS['Places I Can Go'];
+
+      node.innerHTML =
+        '<div class="medallion-wrap" style="--pct:' + pct + '">' +
+          '<div class="medallion">' + icon + (isDone ? '<div class="check">✓</div>' : '') + '</div>' +
+        '</div>' +
+        '<div class="node-info">' +
+          '<div class="node-num">SALA ' + n + '</div>' +
+          '<div class="node-title">' + sala.scenario + '</div>' +
+          '<p class="node-scenario">' + est.map(function(e){return e.theme;}).join(' · ') + '</p>' +
+          '<a class="node-btn" href="sala' + n + '.html?grado=' + currentState.grado + '&equipo=' + encodeURIComponent(currentState.equipo) + '">' +
+            (doneCount === 0 ? 'Entrar' : isDone ? 'Repasar' : 'Continuar') +
+          '</a>' +
+          '<span class="node-progress">' + doneCount + '/' + est.length + '</span>' +
+        '</div>';
+      els.nodesContainer.appendChild(node);
+    });
+  }
+
+  function renderKeyring(){
+    els.slots.innerHTML = '';
+    var piezas = currentState.piezas || [];
+    var allSalas = salaData;
+    var flatKeys = [];
+    allSalas.forEach(function(sala){
+      sala.estaciones.forEach(function(e){ flatKeys.push(e.id); });
+    });
+
+    flatKeys.forEach(function(estId, i){
+      var comp = currentState.estacionesCompletadas || {};
+      var filled = !!comp[estId];
+      var slot = document.createElement('div');
+      slot.className = 'slot' + (filled ? ' filled' : '');
+      slot.textContent = filled ? '🔑' : '🔒';
+      slot.title = filled ? estId : 'Pendiente';
+      els.slots.appendChild(slot);
+    });
+
+    var allDone = flatKeys.every(function(id){
+      return currentState.estacionesCompletadas && currentState.estacionesCompletadas[id];
+    });
+    if(allDone){
+      var code = allSalas.map(function(s){ return s.codigoEstacion; }).join('-');
+      els.masterCodeBlock.hidden = false;
+      els.masterCodeValue.textContent = code;
+    } else {
+      els.masterCodeBlock.hidden = true;
+    }
+  }
+
+  // Registro de Service Worker (network-first)
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js').catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>

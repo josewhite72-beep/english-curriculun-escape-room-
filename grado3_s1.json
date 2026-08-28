@@ -1,0 +1,127 @@
+{
+  "grado": "3",
+  "cefr": "A1.1",
+  "scenario": "Places I Can Go",
+  "salaId": "sala1",
+  "titulo": "Sala 1: Places I Can Go",
+  "vocabularioScenario": [
+    "home",
+    "school",
+    "market",
+    "park",
+    "library",
+    "store",
+    "hospital",
+    "pharmacy",
+    "bakery",
+    "restaurant"
+  ],
+  "gramaticaScenario": [
+    "Contractions (e.g., 'I'm')",
+    "Prepositions of place (e.g., 'at home')",
+    "Present simple (e.g., 'I'm at school.')"
+  ],
+  "fraseFuncional": [
+    "I'm at school.",
+    "I'm at home.",
+    "Are you at school?",
+    "Yes, I'm at school."
+  ],
+  "estaciones": [
+    {
+      "id": "1a",
+      "theme": "I'm at School.",
+      "destreza": "Listening",
+      "learningOutcome": "Can demonstrate comprehension of simple spoken instructions. / Can identify the main points in a conversation.",
+      "candados": [
+        {
+          "id": "1a-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y selecciona el lugar correcto.",
+          "textoAudio": "I'm at school. I have my books.",
+          "opciones": [
+            "school",
+            "market",
+            "park"
+          ],
+          "respuesta": "school",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-2",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el diálogo y responde: ¿dónde está?",
+          "textoAudio": "Are you at home? Yes, I'm at home.",
+          "opciones": [
+            "home",
+            "library",
+            "store"
+          ],
+          "respuesta": "home",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-3",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona la palabra 'school'.",
+          "textoAudio": "I'm at school. My friends are at school too. We like school!",
+          "pregunta": "How many times do you hear 'school'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "SH3",
+      "piezaClave": "🔑1"
+    },
+    {
+      "id": "1b",
+      "theme": "I'm at the Market.",
+      "destreza": "Vocabulary/Reading",
+      "learningOutcome": "Can outline the meaning of simple paragraphs. / Can follow written instructions for making or doing something simple.",
+      "candados": [
+        {
+          "id": "1b-1",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TERKAM",
+          "respuesta": "MARKET",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "YERBAK",
+          "respuesta": "BAKERY",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "I'm at the market. There is a store, a bakery, and a pharmacy near the market.",
+          "pregunta": "How many places are mentioned besides the market?",
+          "opciones": [
+            "Two",
+            "Three",
+            "Four"
+          ],
+          "respuesta": "Three",
+          "pistaCodigo": "El número de tu respuesta es parte del código."
+        }
+      ],
+      "codigoEstacion": "MB3",
+      "piezaClave": "🔑2"
+    }
+  ],
+  "codigoMaestroParcial": [
+    "SH3",
+    "MB3"
+  ],
+  "notaContenido": "Vocabulario, gramática y Learning Outcomes tomados directamente de los Theme Planners reales de 3er grado (Scenario 'Places I Can Go', A2.1). Vocabulario y estandares vienen definidos a nivel de Scenario, por lo que ambos Themes los comparten; los candados distribuyen ese vocabulario segun el enfoque de cada Theme.",
+  "metadata": {
+    "marca": "PanaMentorLabs",
+    "app": "Fuga de Aula",
+    "version": "prototipo-1.0"
+  }
+}
