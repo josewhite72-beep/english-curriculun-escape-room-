@@ -1,0 +1,85 @@
+{
+  "grado": "2",
+  "cefr": "Pre A1.4",
+  "scenario": "All About My Body",
+  "salaId": "sala4",
+  "titulo": "Sala 4: All About My Body",
+  "vocabularioScenario": ["head", "toes", "hand", "foot", "arm", "leg", "knee", "elbow", "shoulder", "finger"],
+  "gramaticaScenario": ["Imperative + noun (e.g., 'Put on your hat.')", "WH-questions (e.g., 'Where is your hat?')", "Present simple (e.g., 'This is my head.')"],
+  "fraseFuncional": ["This is my hand.", "The hat is on my head.", "Put on your hat.", "Raise your hand."],
+  "estaciones": [
+    {
+      "id": "4a",
+      "theme": "Head to Toes!",
+      "destreza": "Writing",
+      "learningOutcome": "Can write simple words supported with drawings to peers. / Can write simple responses to texts.",
+      "candados": [
+        {
+          "id": "4a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "This is my ___.",
+          "opciones": ["head", "hat", "shoe"],
+          "respuesta": "head",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "EKNE",
+          "respuesta": "KNEE",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "4a-3",
+          "tipo": "escritura-corta",
+          "instruccion": "Escribe una oración corta usando la palabra 'hand' y la frase 'This is my...'",
+          "ejemploModelo": "This is my hand.",
+          "criterioValidacion": "La oración debe incluir la palabra 'hand' y la frase 'This is my'.",
+          "pistaCodigo": "Si el maestro valida tu oración, toma la letra 'H'."
+        }
+      ],
+      "codigoEstacion": "HK3",
+      "piezaClave": "🔑7"
+    },
+    {
+      "id": "4b",
+      "theme": "Hats and Shoes!",
+      "destreza": "Listening + Speaking (cierre)",
+      "learningOutcome": "Can respond to simple verbal commands in classroom settings. / Can locate people, objects, and things around them.",
+      "candados": [
+        {
+          "id": "4b-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿dónde está el sombrero?",
+          "textoAudio": "Put on your hat. The hat is on my head.",
+          "opciones": ["head", "foot", "hand"],
+          "respuesta": "head",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4b-2",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona la palabra 'shoulder'.",
+          "textoAudio": "Touch your shoulder. Touch your finger. Touch your shoulder again!",
+          "pregunta": "How many times do you hear 'shoulder'?",
+          "respuesta": "2",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "4b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: da la orden 'Raise your hand.' y responde haciendo la acción y diciendo 'This is my hand.'",
+          "criterioValidacion": "El maestro valida oralmente que el equipo siga la instrucción y use la frase correctamente.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'S'."
+        }
+      ],
+      "codigoEstacion": "HS2",
+      "piezaClave": "🔑8"
+    }
+  ],
+  "codigoMaestroParcial": ["HK3", "HS2"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 2do grado (Scenario 'All About My Body', Pre A1.4).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

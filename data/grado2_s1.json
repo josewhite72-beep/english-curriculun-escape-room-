@@ -1,0 +1,88 @@
+{
+  "grado": "2",
+  "cefr": "Pre A1.4",
+  "scenario": "School Days",
+  "salaId": "sala1",
+  "titulo": "Sala 1: School Days",
+  "vocabularioScenario": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "calendar", "schedule", "activity"],
+  "gramaticaScenario": ["Past simple with the verb 'be' (e.g., 'Yesterday was...')", "Present simple (e.g., 'Today is...')", "WH-questions (e.g., 'What is it?')"],
+  "fraseFuncional": ["Yesterday was Wednesday.", "I like Friday. Art is on Friday!", "Today is Friday!"],
+  "estaciones": [
+    {
+      "id": "1a",
+      "theme": "Yesterday Was Wednesday.",
+      "destreza": "Listening",
+      "learningOutcome": "Can follow the main plot of simple stories told with visual support. / Can respond in a predictable pattern to simple questions about familiar things.",
+      "candados": [
+        {
+          "id": "1a-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿qué día fue ayer?",
+          "textoAudio": "Yesterday was Wednesday. Today is Thursday.",
+          "opciones": ["Wednesday", "Thursday", "Friday"],
+          "respuesta": "Wednesday",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-2",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha y responde: ¿qué día es la clase de arte?",
+          "textoAudio": "My favorite day is Friday. Art class is on Friday!",
+          "opciones": ["Friday", "Monday", "Sunday"],
+          "respuesta": "Friday",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-3",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona la palabra 'Wednesday'.",
+          "textoAudio": "Today is Wednesday. I like Wednesday. Wednesday is fun!",
+          "pregunta": "How many times do you hear 'Wednesday'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "WF3",
+      "piezaClave": "🔑1"
+    },
+    {
+      "id": "1b",
+      "theme": "Today Is Friday!",
+      "destreza": "Vocabulary/Reading",
+      "learningOutcome": "Can show comprehension of simple sentences. / Can follow written instructions with visual aids. / Can recognize all the letters of the alphabet in isolation and the correspondence between letter and sound at the beginning of words.",
+      "candados": [
+        {
+          "id": "1b-1",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "IADFYR",
+          "respuesta": "FRIDAY",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "RENADALC",
+          "respuesta": "CALENDAR",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "Today is Friday. My schedule has Art class today. I like this activity!",
+          "pregunta": "What day is it?",
+          "opciones": ["Friday", "Monday", "Sunday"],
+          "respuesta": "Friday",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "FCF",
+      "piezaClave": "🔑2"
+    }
+  ],
+  "codigoMaestroParcial": ["WF3", "FCF"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 2do grado (Scenario 'School Days', Pre A1.4).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

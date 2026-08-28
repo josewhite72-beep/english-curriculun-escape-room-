@@ -1,0 +1,85 @@
+{
+  "grado": "2",
+  "cefr": "Pre A1.4",
+  "scenario": "School Life Adventures",
+  "salaId": "sala2",
+  "titulo": "Sala 2: School Life Adventures",
+  "vocabularioScenario": ["book", "bag", "pencil", "desk", "chair", "eraser", "ruler", "board", "marker", "crayon"],
+  "gramaticaScenario": ["Adjectives (e.g., 'Point to the blue book.')", "Present simple (e.g., 'That's a book.')", "WH-questions (e.g., 'What size is the book?')"],
+  "fraseFuncional": ["This is a small bag.", "That's a big, blue book.", "What color is the book? -> It's blue.", "Can you please pass me the blue pencil?", "Thank you for the book."],
+  "estaciones": [
+    {
+      "id": "2a",
+      "theme": "That's a Big Book!",
+      "destreza": "Grammar",
+      "learningOutcome": "Can produce complete sentences using adjectives to describe objects (e.g., 'That's a big, blue book.').",
+      "candados": [
+        {
+          "id": "2a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "That's a big, blue ___.",
+          "opciones": ["book", "chair", "pencil"],
+          "respuesta": "book",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "LIPCEN",
+          "respuesta": "PENCIL",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2a-3",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la respuesta: 'What color is the book?'",
+          "oracion": "It's ___.",
+          "opciones": ["blue", "big", "small"],
+          "respuesta": "blue",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "BPB",
+      "piezaClave": "🔑3"
+    },
+    {
+      "id": "2b",
+      "theme": "That's a Small, Brown Bag.",
+      "destreza": "Speaking",
+      "learningOutcome": "Can use greetings and farewells appropriately in conversations with peers. / Can contribute to storytelling sessions with simple sentences based on visual prompts.",
+      "candados": [
+        {
+          "id": "2b-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "This is a small ___.",
+          "opciones": ["bag", "desk", "board"],
+          "respuesta": "bag",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "RSAER",
+          "respuesta": "ERASER",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'Can you please pass me the blue pencil?' y responde 'Thank you for the book.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto de las frases educadas.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'B'."
+        }
+      ],
+      "codigoEstacion": "BEB",
+      "piezaClave": "🔑4"
+    }
+  ],
+  "codigoMaestroParcial": ["BPB", "BEB"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 2do grado (Scenario 'School Life Adventures', Pre A1.4).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

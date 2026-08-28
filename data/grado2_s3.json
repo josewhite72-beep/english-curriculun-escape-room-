@@ -1,0 +1,89 @@
+{
+  "grado": "2",
+  "cefr": "Pre A1.4",
+  "scenario": "All About the Weather",
+  "salaId": "sala3",
+  "titulo": "Sala 3: All About the Weather",
+  "vocabularioScenario": ["sun", "rain", "raindrop", "coat", "hat", "day", "cloud", "wind", "storm", "umbrella"],
+  "gramaticaScenario": ["Adjectives + nouns (e.g., 'rainy day')", "Present simple (e.g., 'I like sunny days.')", "WH-questions (e.g., 'What is the weather like?')"],
+  "fraseFuncional": ["It's a sunny day, and I play outside.", "What's the weather like? -> It's rainy. I need my umbrella."],
+  "estaciones": [
+    {
+      "id": "3a",
+      "theme": "A Perfect Day!",
+      "destreza": "Mediation",
+      "learningOutcome": "Can use visual information in texts to convey meaning.",
+      "candados": [
+        {
+          "id": "3a-1",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "Today is a sunny day. I wear a hat. I don't wear a coat.",
+          "pregunta": "What does the writer NOT wear?",
+          "opciones": ["coat", "hat", "sun"],
+          "respuesta": "coat",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "MUALLERB",
+          "respuesta": "UMBRELLA",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3a-3",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee la lista y cuenta cuántas palabras de clima se mencionan en total.",
+          "textoLectura": "Sun, cloud, wind, rain. Today has sun and wind.",
+          "pregunta": "How many weather words are in the list?",
+          "respuesta": "4",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "CU4",
+      "piezaClave": "🔑5"
+    },
+    {
+      "id": "3b",
+      "theme": "Dress for the Weather.",
+      "destreza": "Reading",
+      "learningOutcome": "Can identify simple story elements (e.g., characters, setting). / Can find specific information in a text (e.g., names, quantities, dates). / Can identify a spoken word's initial and final phoneme if these words have been previously encountered and are attached to a picture.",
+      "candados": [
+        {
+          "id": "3b-1",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "It's a rainy day. I wear my coat and take my umbrella.",
+          "pregunta": "What does the writer take?",
+          "opciones": ["umbrella", "hat", "sun"],
+          "respuesta": "umbrella",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OATC",
+          "respuesta": "COAT",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y cuenta cuántos tipos de días se mencionan.",
+          "textoLectura": "Rainy day, windy day, sunny day, cloudy day.",
+          "pregunta": "How many types of days are mentioned?",
+          "respuesta": "4",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "UC4",
+      "piezaClave": "🔑6"
+    }
+  ],
+  "codigoMaestroParcial": ["CU4", "UC4"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 2do grado (Scenario 'All About the Weather', Pre A1.4).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}
