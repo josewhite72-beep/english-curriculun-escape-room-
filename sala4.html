@@ -73,7 +73,13 @@
   .dot.active{background:var(--brass);}
   .dot.done{background:var(--teal);}
 
-  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; margin-bottom:16px;}
+  .card{
+    background:rgba(30,43,71,0.7);
+    -webkit-backdrop-filter:blur(10px) saturate(1.1);
+    backdrop-filter:blur(10px) saturate(1.1);
+    border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; margin-bottom:16px;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
   .station-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:4px;}
   .station-theme{font-family:var(--font-display); font-weight:700; font-size:19px;}
   .step-count{font-family:var(--font-mono); font-size:12px; color:var(--ink-dim);}
@@ -81,11 +87,11 @@
 
   .instruction{font-size:15px; margin:0 0 14px; line-height:1.5;}
   .passage{
-    background:var(--panel-2); border-radius:12px; padding:14px 16px; font-size:14.5px;
+    background:rgba(36,52,86,0.55); border-radius:12px; padding:14px 16px; font-size:14.5px;
     line-height:1.55; margin-bottom:14px; font-style:italic; color:var(--ink);
   }
   .audio-btn{
-    display:inline-flex; align-items:center; gap:8px; background:var(--panel-2);
+    display:inline-flex; align-items:center; gap:8px; background:rgba(36,52,86,0.6);
     border:1px solid var(--line); color:var(--ink); border-radius:10px; padding:10px 16px;
     font-size:14px; margin-bottom:16px;
   }
@@ -95,11 +101,11 @@
   }
   .scramble span{
     font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--brass);
-    background:var(--panel-2); border-radius:8px; padding:8px 12px;
+    background:rgba(36,52,86,0.6); border-radius:8px; padding:8px 12px;
   }
   .options{display:flex; flex-direction:column; gap:10px; margin-bottom:8px;}
   .opt-btn{
-    text-align:left; background:var(--panel-2); border:1.5px solid var(--line); color:var(--ink);
+    text-align:left; background:rgba(36,52,86,0.6); border:1.5px solid var(--line); color:var(--ink);
     border-radius:12px; padding:13px 16px; font-size:15px;
   }
   .opt-btn:hover{border-color:var(--brass);}
@@ -108,7 +114,7 @@
   .opt-btn:disabled{cursor:default;}
   .text-input-row{display:flex; gap:10px; margin-bottom:8px;}
   .text-input-row input{
-    flex:1; background:var(--panel-2); border:1.5px solid var(--line); border-radius:10px;
+    flex:1; background:rgba(36,52,86,0.6); border:1.5px solid var(--line); border-radius:10px;
     color:var(--ink); font-family:var(--font-mono); font-size:16px; padding:11px 14px; text-transform:uppercase;
   }
   .btn-check{
