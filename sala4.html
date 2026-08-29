@@ -68,7 +68,33 @@
   .title{font-family:var(--font-display); font-weight:800; font-size:clamp(28px,8vw,36px); margin:6px 0 4px;}
   .subtitle{color:var(--ink-dim); font-size:13.5px; margin:0;}
 
-  .station-dots{display:flex; gap:8px; margin:16px 0 22px;}
+  .hud{
+    position:sticky; top:0; z-index:5;
+    background:rgba(20,27,46,0.82);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    margin:0 -20px 18px; padding:12px 20px 10px;
+  }
+  .hud-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px;}
+  .hud-locks{display:flex; gap:6px;}
+  .hud-lock{
+    width:30px; height:30px; border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; background:var(--panel-2); border:1.5px solid var(--line);
+    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+  .hud-lock.open{background:rgba(63,167,150,.22); border-color:var(--teal);}
+  .hud-lock.active{border-color:var(--brass); box-shadow:0 0 0 3px rgba(204,159,63,.22);}
+  .hud-lock.pop{animation:hudPop .4s ease;}
+  @keyframes hudPop{0%{transform:scale(1);}45%{transform:scale(1.28);}100%{transform:scale(1);}}
+  @media (prefers-reduced-motion: reduce){ .hud-lock.pop{animation:none;} }
+  .hud-keys{
+    display:flex; align-items:center; gap:6px; flex:none;
+    background:var(--panel-2); border:1px solid var(--line); border-radius:20px;
+    padding:6px 12px; font-family:var(--font-mono); font-size:13px; color:var(--brass); white-space:nowrap;
+  }
+  .station-dots{display:flex; gap:8px; margin:0;}
   .dot{flex:1; height:6px; border-radius:4px; background:var(--panel-2);}
   .dot.active{background:var(--brass);}
   .dot.done{background:var(--teal);}
@@ -149,7 +175,13 @@
     <p class="subtitle" id="salaSubtitle">Cargando…</p>
   </div>
 
-  <div class="station-dots" id="stationDots"></div>
+  <div class="hud">
+    <div class="hud-row">
+      <div class="hud-locks" id="hudLocks"></div>
+      <div class="hud-keys">🔑 <span id="hudKeysCount">0</span>/8</div>
+    </div>
+    <div class="station-dots" id="stationDots"></div>
+  </div>
 
   <div id="content"></div>
 </div>
@@ -198,6 +230,7 @@
       stationIdx = sala.estaciones.findIndex(function(e){ return !state.estacionesCompletadas[e.id]; });
       if(stationIdx === -1) stationIdx = sala.estaciones.length; // todo completo
       renderDots();
+      renderHudKeys();
       renderStation();
       updateMapMarker();
     })
@@ -250,15 +283,48 @@
     state.candadosCompletados[candId] = true;
     saveState();
     updateMapMarker();
+    popHudLock(candId);
+  }
+
+  function renderHudLocks(est){
+    var wrap = document.getElementById('hudLocks');
+    if(!wrap) return;
+    wrap.innerHTML = '';
+    est.candados.forEach(function(c, i){
+      var done = isCandadoDone(est.id, c.id);
+      var el = document.createElement('div');
+      el.className = 'hud-lock' + (done ? ' open' : '') + (!done && i === candadoIdx ? ' active' : '');
+      el.dataset.candId = c.id;
+      el.textContent = done ? '🔓' : '🔒';
+      wrap.appendChild(el);
+    });
+  }
+
+  function popHudLock(candId){
+    var el = document.querySelector('.hud-lock[data-cand-id="' + candId + '"]');
+    if(el){
+      el.textContent = '🔓';
+      el.classList.add('open', 'pop');
+      el.classList.remove('active');
+    }
+  }
+
+  function renderHudKeys(){
+    var el = document.getElementById('hudKeysCount');
+    if(!el) return;
+    var count = state.estacionesCompletadas ? Object.keys(state.estacionesCompletadas).length : 0;
+    el.textContent = count;
   }
   function markEstacionCompleta(est){
     state.estacionesCompletadas[est.id] = true;
     saveState();
     renderDots();
+    renderHudKeys();
     renderReward(est);
   }
 
   function renderCandado(est, cand){
+    renderHudLocks(est);
     var content = document.getElementById('content');
     var html = '<div class="card">';
     html += '<div class="station-head"><span class="station-theme">' + est.theme + '</span>' +
