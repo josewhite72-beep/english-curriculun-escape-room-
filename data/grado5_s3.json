@@ -1,0 +1,90 @@
+{
+  "grado": "5",
+  "cefr": "A1.3",
+  "scenario": "The Local Farm Stand",
+  "salaId": "sala3",
+  "titulo": "Sala 3: The Local Farm Stand",
+  "vocabularioScenario": ["mango", "pineapple", "guava", "tomato", "pepper", "lettuce", "papaya", "banana", "fruit", "farm"],
+  "gramaticaScenario": ["Polite requests (e.g., 'Can you help me, please?')", "WH-questions (e.g., 'How much is...?')", "'Some' and 'any' with countable/non-countable nouns (e.g., 'Do you have any apples?', 'I would like some water.')"],
+  "fraseFuncional": ["How much is this?", "Do you have any apples?", "I would like some water.", "We have some...", "I don't have any..."],
+  "estaciones": [
+    {
+      "id": "3a",
+      "theme": "I Need Two Papayas, Please.",
+      "destreza": "Mediation",
+      "learningOutcome": "Can explain the steps to solve a problem using practical examples.",
+      "candados": [
+        {
+          "id": "3a-1",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "I need two papayas, please. Do you have any mangoes?",
+          "pregunta": "What does the writer need?",
+          "opciones": ["papayas", "mangoes", "bananas"],
+          "respuesta": "papayas",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "YAAPAP",
+          "respuesta": "PAPAYA",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3a-3",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee la lista y cuenta cuántas frutas se mencionan.",
+          "textoLectura": "Mango, pineapple, papaya, banana.",
+          "pregunta": "How many fruits are mentioned?",
+          "respuesta": "4",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "PP4",
+      "piezaClave": "🔑5"
+    },
+    {
+      "id": "3b",
+      "theme": "How Much Are the Bananas?",
+      "destreza": "Reading",
+      "learningOutcome": "Can comprehend short narratives about familiar experiences. / Can extract specific information from texts on familiar topics.",
+      "candados": [
+        {
+          "id": "3b-1",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "How much are the bananas? They are one dollar.",
+          "pregunta": "How much are the bananas?",
+          "opciones": ["one dollar", "two dollars", "free"],
+          "respuesta": "one dollar",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "AAANNB",
+          "respuesta": "BANANA",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "We have some tomatoes. We don't have any lettuce today.",
+          "pregunta": "What don't they have?",
+          "opciones": ["lettuce", "tomatoes", "mangoes"],
+          "respuesta": "lettuce",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "OBL",
+      "piezaClave": "🔑6"
+    }
+  ],
+  "codigoMaestroParcial": ["PP4", "OBL"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 5to grado (Scenario 'The Local Farm Stand', A1.3).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

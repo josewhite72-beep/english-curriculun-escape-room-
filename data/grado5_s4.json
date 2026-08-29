@@ -1,0 +1,85 @@
+{
+  "grado": "5",
+  "cefr": "A1.3",
+  "scenario": "Helping Around the House",
+  "salaId": "sala4",
+  "titulo": "Sala 4: Helping Around the House",
+  "vocabularioScenario": ["dishes", "house", "chores", "broom", "floor", "kitchen", "family", "task", "table", "plant"],
+  "gramaticaScenario": ["Present simple (e.g., 'I wash.', 'He washes.', 'I don't like to wash the dishes.')", "WH-questions (e.g., 'What do you do at home?', 'How often do you clean?')", "Frequency adverbs (e.g., every day)"],
+  "fraseFuncional": ["What do you do at home?", "I help my mom."],
+  "estaciones": [
+    {
+      "id": "4a",
+      "theme": "I Wash the Dishes Every day.",
+      "destreza": "Writing",
+      "learningOutcome": "Can write 3-5 simple sentences about I Wash the Dishes Every day. using correct spelling of at least 5 vocabulary words from this theme.",
+      "candados": [
+        {
+          "id": "4a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "I ___ the dishes.",
+          "opciones": ["wash", "washes", "washing"],
+          "respuesta": "wash",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OORBM",
+          "respuesta": "BROOM",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "4a-3",
+          "tipo": "escritura-corta",
+          "instruccion": "Escribe una oración corta usando la palabra 'chores' y la frase 'I help my mom...'",
+          "ejemploModelo": "I help my mom with the chores.",
+          "criterioValidacion": "La oración debe incluir la palabra 'chores' y la frase 'I help my mom'.",
+          "pistaCodigo": "Si el maestro valida tu oración, toma la letra 'C'."
+        }
+      ],
+      "codigoEstacion": "WB3",
+      "piezaClave": "🔑7"
+    },
+    {
+      "id": "4b",
+      "theme": "We All Do Chores.",
+      "destreza": "Listening + Speaking (cierre)",
+      "learningOutcome": "Can produce 3-5 complete sentences using Present simple to describe or discuss the theme in conversations with peers.",
+      "candados": [
+        {
+          "id": "4b-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿a quién ayuda?",
+          "textoAudio": "What do you do at home? I help my mom with the chores.",
+          "opciones": ["mom", "dad", "sister"],
+          "respuesta": "mom",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4b-2",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'chores'.",
+          "textoAudio": "Chores, chores! I do chores every day. I like my chores!",
+          "pregunta": "How many times do you hear 'chores'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "4b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'What do you do at home?' y responde 'I help my mom.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto de la pregunta y la respuesta.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'M'."
+        }
+      ],
+      "codigoEstacion": "MC3",
+      "piezaClave": "🔑8"
+    }
+  ],
+  "codigoMaestroParcial": ["WB3", "MC3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 5to grado (Scenario 'Helping Around the House', A1.3).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

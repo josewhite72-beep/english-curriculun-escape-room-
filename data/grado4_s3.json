@@ -1,0 +1,89 @@
+{
+  "grado": "4",
+  "cefr": "A1.2",
+  "scenario": "Shopping at the Market",
+  "salaId": "sala3",
+  "titulo": "Sala 3: Shopping at the Market",
+  "vocabularioScenario": ["market", "price", "shopping list", "item", "store", "cost", "pineapple", "cashier", "money", "cassava"],
+  "gramaticaScenario": ["WH-Questions (e.g., 'How much is it?')", "Quantities (e.g., 'I need five potatoes.')", "Present Simple (e.g., 'I want three apples and one banana.')"],
+  "fraseFuncional": ["How much is the pineapple?", "I need five apples.", "Excuse me, how much is it?"],
+  "estaciones": [
+    {
+      "id": "3a",
+      "theme": "How Much Is the Pineapple?",
+      "destreza": "Mediation",
+      "learningOutcome": "Can identify the main ideas and details in short narratives. / Can summarize simple stories or articles.",
+      "candados": [
+        {
+          "id": "3a-1",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "At the market, the pineapple costs two dollars. The cassava costs one dollar.",
+          "pregunta": "What is cheaper?",
+          "opciones": ["cassava", "pineapple", "cashier"],
+          "respuesta": "cassava",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "PPPAENIEL",
+          "respuesta": "PINEAPPLE",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3a-3",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee la lista y cuenta cuántos artículos hay.",
+          "textoLectura": "Shopping list: pineapple, cassava, and money for the cashier.",
+          "pregunta": "How many items are in the list?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "CP3",
+      "piezaClave": "🔑5"
+    },
+    {
+      "id": "3b",
+      "theme": "I Need Five Yucas.",
+      "destreza": "Reading",
+      "learningOutcome": "Can read regularly spelled one-syllable or two-syllable words represented by single letters.",
+      "candados": [
+        {
+          "id": "3b-1",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "I need five yucas. The store has cassava for one dollar each.",
+          "pregunta": "How many yucas does the writer need?",
+          "opciones": ["five", "three", "two"],
+          "respuesta": "five",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OTRES",
+          "respuesta": "STORE",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y cuenta cuántos precios se mencionan.",
+          "textoLectura": "The pineapple costs two dollars. The cassava costs one dollar. The item is cheap.",
+          "pregunta": "How many prices are mentioned?",
+          "respuesta": "2",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "FS2",
+      "piezaClave": "🔑6"
+    }
+  ],
+  "codigoMaestroParcial": ["CP3", "FS2"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 4to grado (Scenario 'Shopping at the Market', A1.2).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

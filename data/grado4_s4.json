@@ -1,0 +1,85 @@
+{
+  "grado": "4",
+  "cefr": "A1.2",
+  "scenario": "Visiting the Panama Canal",
+  "salaId": "sala4",
+  "titulo": "Sala 4: Visiting the Panama Canal",
+  "vocabularioScenario": ["canal", "boat", "ocean", "bridge", "current", "vessel", "ship", "yacht", "goods", "locks"],
+  "gramaticaScenario": ["Present simple affirmative/interrogative (e.g., 'The Panama Canal connects two oceans.')", "Present continuous (e.g., 'Two vessels are crossing the Canal now.')", "Comparatives and superlatives (e.g., 'That ship is bigger than this yacht.')"],
+  "fraseFuncional": ["The Panama Canal connects two oceans.", "There are many people at the Miraflores Locks today.", "That black vessel is bigger than the white ship."],
+  "estaciones": [
+    {
+      "id": "4a",
+      "theme": "A Vessel Is Crossing!",
+      "destreza": "Writing",
+      "learningOutcome": "Can create instructional posters for peers. / Can develop short drafts of texts on class experiments or projects.",
+      "candados": [
+        {
+          "id": "4a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "A ___ is crossing the canal.",
+          "opciones": ["vessel", "bridge", "market"],
+          "respuesta": "vessel",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "SKCOL",
+          "respuesta": "LOCKS",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "4a-3",
+          "tipo": "escritura-corta",
+          "instruccion": "Escribe una oración corta usando la palabra 'canal' y la frase 'The Panama Canal connects...'",
+          "ejemploModelo": "The Panama Canal connects two oceans.",
+          "criterioValidacion": "La oración debe incluir la palabra 'canal' y mencionar los dos océanos.",
+          "pistaCodigo": "Si el maestro valida tu oración, toma la letra 'C'."
+        }
+      ],
+      "codigoEstacion": "VLC",
+      "piezaClave": "🔑7"
+    },
+    {
+      "id": "4b",
+      "theme": "The Vessels Are Big Because...",
+      "destreza": "Listening + Speaking (cierre)",
+      "learningOutcome": "Can narrate a short story or incident that is happening now. / Can compare a simple classroom object to something familiar.",
+      "candados": [
+        {
+          "id": "4b-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿qué es más grande?",
+          "textoAudio": "That ship is bigger than this yacht.",
+          "opciones": ["ship", "yacht", "boat"],
+          "respuesta": "ship",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4b-2",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'vessel'.",
+          "textoAudio": "A vessel is crossing. The vessel is big. I like this vessel!",
+          "pregunta": "How many times do you hear 'vessel'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "4b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: compara dos embarcaciones usando 'bigger than', por ejemplo 'That ship is bigger than this boat.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto del comparativo.",
+          "pistaCodigo": "Si el maestro valida tu comparación, toma la letra 'B'."
+        }
+      ],
+      "codigoEstacion": "SV3",
+      "piezaClave": "🔑8"
+    }
+  ],
+  "codigoMaestroParcial": ["VLC", "SV3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 4to grado (Scenario 'Visiting the Panama Canal', A1.2).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

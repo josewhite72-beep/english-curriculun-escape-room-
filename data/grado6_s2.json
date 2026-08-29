@@ -1,0 +1,85 @@
+{
+  "grado": "6",
+  "cefr": "A2.1",
+  "scenario": "Keeping Our Communities Clean",
+  "salaId": "sala2",
+  "titulo": "Sala 2: Keeping Our Communities Clean",
+  "vocabularioScenario": ["clean", "trash", "recycle", "supply", "bag", "broom", "mop", "organize", "community", "classroom"],
+  "gramaticaScenario": ["Imperatives (e.g., 'Bring a trash bag.')", "Modals (e.g., 'We should organize the desks.')", "Future with 'will' (e.g., 'I will clean the windows.')"],
+  "fraseFuncional": ["We should clean the desks.", "You will sweep the floor."],
+  "estaciones": [
+    {
+      "id": "2a",
+      "theme": "We Should Clean the Classroom on Friday.",
+      "destreza": "Grammar",
+      "learningOutcome": "Can give instructions using imperatives and modals.",
+      "candados": [
+        {
+          "id": "2a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "We ___ clean the desks.",
+          "opciones": ["should", "is", "are"],
+          "respuesta": "should",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OBRMO",
+          "respuesta": "BROOM",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2a-3",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "Bring a trash ___.",
+          "opciones": ["bag", "book", "ship"],
+          "respuesta": "bag",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "SB3",
+      "piezaClave": "🔑3"
+    },
+    {
+      "id": "2b",
+      "theme": "Who Will Bring the Cleaning Supplies?",
+      "destreza": "Speaking",
+      "learningOutcome": "Can give instructions using imperatives and modals. / Can participate in group discussions on community actions.",
+      "candados": [
+        {
+          "id": "2b-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "I ___ clean the windows.",
+          "opciones": ["will", "am", "is"],
+          "respuesta": "will",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "CYCELER",
+          "respuesta": "RECYCLE",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'Who will bring the cleaning supplies?' y responde 'I will bring the trash bag.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto del futuro con 'will'.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'W'."
+        }
+      ],
+      "codigoEstacion": "WR2",
+      "piezaClave": "🔑4"
+    }
+  ],
+  "codigoMaestroParcial": ["SB3", "WR2"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 6to grado (Scenario 'Keeping Our Communities Clean', A2.1).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

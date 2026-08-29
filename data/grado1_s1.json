@@ -1,0 +1,88 @@
+{
+  "grado": "1",
+  "cefr": "Pre A1.3",
+  "scenario": "All Week Long!",
+  "salaId": "sala1",
+  "titulo": "Sala 1: All Week Long!",
+  "vocabularioScenario": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "weekend", "day", "week"],
+  "gramaticaScenario": ["Noun + verb + noun (e.g., 'Today is Monday.')", "Present simple (e.g., 'It is the weekend.')", "WH-questions (e.g., 'What day is today?')"],
+  "fraseFuncional": ["Today is Monday.", "Is today Tuesday? No, it is Saturday. It is the weekend."],
+  "estaciones": [
+    {
+      "id": "1a",
+      "theme": "Today Is Tuesday!",
+      "destreza": "Listening",
+      "learningOutcome": "Can recognize familiar words related to days of the week spoken slowly. / Can respond to the basic days of the week and weekend by pointing at the word or position on a basic calendar.",
+      "candados": [
+        {
+          "id": "1a-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿qué día es hoy?",
+          "textoAudio": "Today is Tuesday. Yesterday was Monday.",
+          "opciones": ["Tuesday", "Monday", "Friday"],
+          "respuesta": "Tuesday",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-2",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha y responde: ¿qué día es?",
+          "textoAudio": "Is today Wednesday? No, it is Thursday.",
+          "opciones": ["Thursday", "Wednesday", "Sunday"],
+          "respuesta": "Thursday",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-3",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'Tuesday'.",
+          "textoAudio": "Tuesday, Tuesday! Today is Tuesday. I like Tuesday!",
+          "pregunta": "How many times do you hear 'Tuesday'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "TT3",
+      "piezaClave": "🔑1"
+    },
+    {
+      "id": "1b",
+      "theme": "It's the Weekend.",
+      "destreza": "Vocabulary/Reading",
+      "learningOutcome": "Can find and point to familiar words in simple texts. / Can identify and follow one-step written directions with visual support.",
+      "candados": [
+        {
+          "id": "1b-1",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "NEDWKEE",
+          "respuesta": "WEEKEND",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TAYDRUSA",
+          "respuesta": "SATURDAY",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "It is the weekend. Today is Saturday. I like the weekend!",
+          "pregunta": "What day is it?",
+          "opciones": ["Saturday", "Monday", "Wednesday"],
+          "respuesta": "Saturday",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "WSA",
+      "piezaClave": "🔑2"
+    }
+  ],
+  "codigoMaestroParcial": ["TT3", "WSA"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 1er grado (Scenario 'All Week Long!', Pre A1.3).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

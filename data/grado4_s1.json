@@ -1,0 +1,88 @@
+{
+  "grado": "4",
+  "cefr": "A1.2",
+  "scenario": "A Walk in the Neighborhood",
+  "salaId": "sala1",
+  "titulo": "Sala 1: A Walk in the Neighborhood",
+  "vocabularioScenario": ["neighborhood", "park", "place", "tree", "flower", "building", "street", "path", "playground", "walk"],
+  "gramaticaScenario": ["Superlatives (e.g., 'This school is the best.')", "Simple present + conjunction (e.g., 'I like this park because it is fun.')", "Question structure (e.g., 'What is your favorite?')"],
+  "fraseFuncional": ["This is my favorite.", "I like this park because it is fun.", "What is your favorite?"],
+  "estaciones": [
+    {
+      "id": "1a",
+      "theme": "This Is My Favorite.",
+      "destreza": "Listening",
+      "learningOutcome": "Can identify the main points of talks on familiar matters. / Can respond to questions about familiar topics.",
+      "candados": [
+        {
+          "id": "1a-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿cuál es el lugar favorito?",
+          "textoAudio": "This is my favorite. I like this park because it is fun.",
+          "opciones": ["park", "street", "building"],
+          "respuesta": "park",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-2",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha y responde: ¿qué hay en la calle?",
+          "textoAudio": "I like this street because it has beautiful trees.",
+          "opciones": ["trees", "flowers", "buildings"],
+          "respuesta": "trees",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-3",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'favorite'.",
+          "textoAudio": "This is my favorite. My favorite place is the park. I love my favorite spot!",
+          "pregunta": "How many times do you hear 'favorite'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "PT3",
+      "piezaClave": "🔑1"
+    },
+    {
+      "id": "1b",
+      "theme": "It's the Best!",
+      "destreza": "Vocabulary/Reading",
+      "learningOutcome": "Can outline key information in simple factual texts on familiar subjects. / Can comprehend instructions for classroom projects and crafts.",
+      "candados": [
+        {
+          "id": "1b-1",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OGNRUDPYAL",
+          "respuesta": "PLAYGROUND",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "HTPA",
+          "respuesta": "PATH",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "This school is the best. It's the best because it has a big playground and a nice path.",
+          "pregunta": "Why is the school the best?",
+          "opciones": ["It has a playground and a path", "It has a market", "It has a canal"],
+          "respuesta": "It has a playground and a path",
+          "pistaCodigo": "Toma la primera letra de 'Playground'."
+        }
+      ],
+      "codigoEstacion": "PP3",
+      "piezaClave": "🔑2"
+    }
+  ],
+  "codigoMaestroParcial": ["PT3", "PP3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 4to grado (Scenario 'A Walk in the Neighborhood', A1.2).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

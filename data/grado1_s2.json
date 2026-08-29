@@ -1,0 +1,85 @@
+{
+  "grado": "1",
+  "cefr": "Pre A1.3",
+  "scenario": "Nice Weather Today!",
+  "salaId": "sala2",
+  "titulo": "Sala 2: Nice Weather Today!",
+  "vocabularioScenario": ["weather", "sun", "rain", "clouds", "wind", "storm", "snow", "sunny", "rainy", "windy"],
+  "gramaticaScenario": ["Present continuous (e.g., 'It is raining.')", "Subject + verb + adjective (e.g., 'It is sunny.')", "WH-questions (e.g., 'What is the weather today?')"],
+  "fraseFuncional": ["It is sunny.", "I'm cold.", "I'm hot.", "What is the weather today?"],
+  "estaciones": [
+    {
+      "id": "2a",
+      "theme": "It's Sunny!",
+      "destreza": "Grammar",
+      "learningOutcome": "Can describe simple weather conditions (e.g., 'It is sunny.') and describe simple reactions to weather (e.g., 'I'm cold.' or 'I'm hot.').",
+      "candados": [
+        {
+          "id": "2a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "It is ___.",
+          "opciones": ["sunny", "rain", "cloud"],
+          "respuesta": "sunny",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "DWNI",
+          "respuesta": "WIND",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2a-3",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la respuesta: 'What is the weather today?'",
+          "oracion": "It is ___.",
+          "opciones": ["sunny", "Tuesday", "weekend"],
+          "respuesta": "sunny",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "SW3",
+      "piezaClave": "🔑3"
+    },
+    {
+      "id": "2b",
+      "theme": "It's Raining.",
+      "destreza": "Speaking",
+      "learningOutcome": "Can ask basic questions, such as 'What is the weather today?' to learn about daily conditions. / Engaging in simple weather-related conversations.",
+      "candados": [
+        {
+          "id": "2b-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "It is ___.",
+          "opciones": ["raining", "sunny", "wind"],
+          "respuesta": "raining",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "MRSTO",
+          "respuesta": "STORM",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'What is the weather today?' y responde 'It is raining.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto de la pregunta y la respuesta.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'R'."
+        }
+      ],
+      "codigoEstacion": "RS2",
+      "piezaClave": "🔑4"
+    }
+  ],
+  "codigoMaestroParcial": ["SW3", "RS2"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 1er grado (Scenario 'Nice Weather Today!', Pre A1.3).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

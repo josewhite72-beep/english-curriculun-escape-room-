@@ -1,0 +1,85 @@
+{
+  "grado": "5",
+  "cefr": "A1.3",
+  "scenario": "Taking Care of Our Class",
+  "salaId": "sala2",
+  "titulo": "Sala 2: Taking Care of Our Class",
+  "vocabularioScenario": ["whiteboard", "window", "door", "trash can", "dustpan", "mop", "sponge", "bucket", "cloth", "cleaner"],
+  "gramaticaScenario": ["Present continuous (e.g., 'We are sweeping.')", "Imperatives (e.g., 'Sweep.', 'Let's sweep.')", "Modal 'can' (e.g., 'I can sweep the floor.', 'Can you help me wipe down the desks?')"],
+  "fraseFuncional": ["We are sweeping.", "Can I help you sweep?", "Please arrange the chairs."],
+  "estaciones": [
+    {
+      "id": "2a",
+      "theme": "We Are Sweeping the Floors.",
+      "destreza": "Grammar",
+      "learningOutcome": "Can produce 3-5 complete sentences using Present continuous (e.g., 'We are sweeping.') to describe or discuss the theme.",
+      "candados": [
+        {
+          "id": "2a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "We are ___.",
+          "opciones": ["sweeping", "sweep", "swept"],
+          "respuesta": "sweeping",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OMP",
+          "respuesta": "MOP",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2a-3",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "I ___ sweep the floor.",
+          "opciones": ["can", "is", "are"],
+          "respuesta": "can",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "SM3",
+      "piezaClave": "🔑3"
+    },
+    {
+      "id": "2b",
+      "theme": "Let's Arrange the Chairs.",
+      "destreza": "Speaking",
+      "learningOutcome": "Can produce 3-5 complete sentences using imperatives and the modal 'can' to describe or discuss the theme in conversations with peers.",
+      "candados": [
+        {
+          "id": "2b-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "___ arrange the chairs.",
+          "opciones": ["Let's", "Is", "Are"],
+          "respuesta": "Let's",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "2b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "KECTUB",
+          "respuesta": "BUCKET",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "2b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'Can you help me wipe down the desks?' y responde 'Yes, I can.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto de la pregunta con 'can' y la respuesta.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'B'."
+        }
+      ],
+      "codigoEstacion": "LB2",
+      "piezaClave": "🔑4"
+    }
+  ],
+  "codigoMaestroParcial": ["SM3", "LB2"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 5to grado (Scenario 'Taking Care of Our Class', A1.3).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

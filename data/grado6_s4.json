@@ -1,0 +1,85 @@
+{
+  "grado": "6",
+  "cefr": "A2.1",
+  "scenario": "Our Classroom News",
+  "salaId": "sala4",
+  "titulo": "Sala 4: Our Classroom News",
+  "vocabularioScenario": ["article", "newsletter", "headline", "photo", "caption", "trip", "event", "write", "edit", "publish"],
+  "gramaticaScenario": ["Future with 'will' (e.g., 'I will write the article.')", "Past simple for events (e.g., 'We visited the museum.')", "Present continuous for current actions (e.g., 'We are editing the photos.')"],
+  "fraseFuncional": ["You will take photos.", "Last Tuesday, we went to the zoo."],
+  "estaciones": [
+    {
+      "id": "4a",
+      "theme": "I Will Write the Article About Our School Trip.",
+      "destreza": "Writing",
+      "learningOutcome": "Can collaborate to create a classroom newsletter. / Can write short news-style paragraphs about class events.",
+      "candados": [
+        {
+          "id": "4a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "I ___ write the article.",
+          "opciones": ["will", "is", "are"],
+          "respuesta": "will",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "PANOCTI",
+          "respuesta": "CAPTION",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "4a-3",
+          "tipo": "escritura-corta",
+          "instruccion": "Escribe una oración corta usando la palabra 'trip' y la frase 'I will write...'",
+          "ejemploModelo": "I will write about our school trip.",
+          "criterioValidacion": "La oración debe incluir la palabra 'trip' y la frase 'I will write'.",
+          "pistaCodigo": "Si el maestro valida tu oración, toma la letra 'T'."
+        }
+      ],
+      "codigoEstacion": "WC3",
+      "piezaClave": "🔑7"
+    },
+    {
+      "id": "4b",
+      "theme": "We Need Pictures for the Classroom Newsletter.",
+      "destreza": "Listening + Speaking (cierre)",
+      "learningOutcome": "Can summarize classmates' ideas in simplified notes.",
+      "candados": [
+        {
+          "id": "4b-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿qué están editando?",
+          "textoAudio": "We are editing the photos for the newsletter.",
+          "opciones": ["photos", "articles", "books"],
+          "respuesta": "photos",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4b-2",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'newsletter'.",
+          "textoAudio": "Newsletter, newsletter! We need the newsletter today. Great newsletter!",
+          "pregunta": "How many times do you hear 'newsletter'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "4b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'Who will take the photos?' y responde 'You will take photos.'",
+          "criterioValidacion": "El maestro valida oralmente el uso correcto del futuro con 'will'.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'P'."
+        }
+      ],
+      "codigoEstacion": "PN3",
+      "piezaClave": "🔑8"
+    }
+  ],
+  "codigoMaestroParcial": ["WC3", "PN3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 6to grado (Scenario 'Our Classroom News', A2.1).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

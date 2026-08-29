@@ -1,0 +1,88 @@
+{
+  "grado": "5",
+  "cefr": "A1.3",
+  "scenario": "Following Instructions at School",
+  "salaId": "sala1",
+  "titulo": "Sala 1: Following Instructions at School",
+  "vocabularioScenario": ["paper", "scissors", "glue", "pencil", "poster"],
+  "gramaticaScenario": ["Plural of the imperatives (e.g., 'Let's make a poster.')", "Sequencing words (e.g., 'first, next')"],
+  "fraseFuncional": ["Let's make a poster.", "First, I cut the paper. Next, I glue it."],
+  "estaciones": [
+    {
+      "id": "1a",
+      "theme": "First, I Cut the Paper.",
+      "destreza": "Listening",
+      "learningOutcome": "Can identify at least 10 key vocabulary words when listening to simple descriptions or dialogues related to First, I Cut the Paper.",
+      "candados": [
+        {
+          "id": "1a-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿qué hace primero?",
+          "textoAudio": "First, I cut the paper. Next, I glue it.",
+          "opciones": ["cut", "glue", "draw"],
+          "respuesta": "cut",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-2",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha y responde: ¿qué necesitan primero?",
+          "textoAudio": "Let's make a poster! First, we need glue and paper.",
+          "opciones": ["glue", "poster", "chairs"],
+          "respuesta": "glue",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-3",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'paper'.",
+          "textoAudio": "Paper, paper! First, cut the paper. Then glue the paper.",
+          "pregunta": "How many times do you hear 'paper'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "CG3",
+      "piezaClave": "🔑1"
+    },
+    {
+      "id": "1b",
+      "theme": "Let's Make a Poster!",
+      "destreza": "Vocabulary/Reading",
+      "learningOutcome": "Can read and understand 3-5 simple sentences or short texts about Let's Make a Poster! and answer comprehension questions.",
+      "candados": [
+        {
+          "id": "1b-1",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "CSSRIOSS",
+          "respuesta": "SCISSORS",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TSPREO",
+          "respuesta": "POSTER",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "Let's make a poster. First, cut the paper. Next, glue it. Then, draw with a pencil.",
+          "pregunta": "What do you use to draw?",
+          "opciones": ["pencil", "glue", "scissors"],
+          "respuesta": "pencil",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "SP3",
+      "piezaClave": "🔑2"
+    }
+  ],
+  "codigoMaestroParcial": ["CG3", "SP3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 5to grado (Scenario 'Following Instructions at School', A1.3).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

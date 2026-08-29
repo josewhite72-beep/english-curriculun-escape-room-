@@ -1,0 +1,89 @@
+{
+  "grado": "1",
+  "cefr": "A1.1",
+  "scenario": "Colors in Our World",
+  "salaId": "sala3",
+  "titulo": "Sala 3: Colors in Our World",
+  "vocabularioScenario": ["bird", "flower", "cat", "tree", "house", "leaf", "sky", "blue", "purple", "orange"],
+  "gramaticaScenario": ["Color + noun (e.g., 'blue bird')", "WH-questions (e.g., 'What color is it?')", "Present simple (e.g., 'It is an orange cat.')"],
+  "fraseFuncional": ["That is a red bird.", "What color is it?", "I like red."],
+  "estaciones": [
+    {
+      "id": "3a",
+      "theme": "That's a Purple Flower.",
+      "destreza": "Mediation",
+      "learningOutcome": "Can use simple drawings to communicate about objects (e.g., drawing a blue bird). / Can use gestures or point to objects to clarify their responses when describing colors.",
+      "candados": [
+        {
+          "id": "3a-1",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "I see a purple flower. I see a green tree. I don't see a red bird.",
+          "pregunta": "What color is NOT seen?",
+          "opciones": ["red", "purple", "green"],
+          "respuesta": "red",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "RWFOLE",
+          "respuesta": "FLOWER",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3a-3",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee la lista y cuenta cuántos colores se mencionan.",
+          "textoLectura": "Blue bird, purple flower, green tree.",
+          "pregunta": "How many colors are mentioned?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "RF3",
+      "piezaClave": "🔑5"
+    },
+    {
+      "id": "3b",
+      "theme": "It's an Orange Cat.",
+      "destreza": "Reading",
+      "learningOutcome": "Can listen to a simple story and identify corresponding pictures that illustrate key events. / Can identify simple words for very common symbols, matching them to images.",
+      "candados": [
+        {
+          "id": "3b-1",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "It is an orange cat. The cat sits in the house.",
+          "pregunta": "What color is the cat?",
+          "opciones": ["orange", "blue", "purple"],
+          "respuesta": "orange",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TCA",
+          "respuesta": "CAT",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y cuenta cuántas cosas se mencionan.",
+          "textoLectura": "Orange cat, blue bird, purple flower, green tree.",
+          "pregunta": "How many things are mentioned?",
+          "respuesta": "4",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "OC4",
+      "piezaClave": "🔑6"
+    }
+  ],
+  "codigoMaestroParcial": ["RF3", "OC4"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 1er grado (Scenario 'Colors in Our World', A1.1).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

@@ -1,0 +1,88 @@
+{
+  "grado": "6",
+  "cefr": "A2.1",
+  "scenario": "Our Community News",
+  "salaId": "sala1",
+  "titulo": "Sala 1: Our Community News",
+  "vocabularioScenario": ["news", "report", "event", "community", "famous", "celebration", "interview", "headline", "article", "photo"],
+  "gramaticaScenario": ["Simple past (e.g., 'We visited the park.')", "WH-questions (e.g., 'What happened at the fair?')", "There was/were (e.g., 'There were many people.')"],
+  "fraseFuncional": ["Last week, our school had a fair.", "What happened at the parade?"],
+  "estaciones": [
+    {
+      "id": "1a",
+      "theme": "Reporting From the School!",
+      "destreza": "Listening",
+      "learningOutcome": "Can identify at least 10 key vocabulary words when listening to simple descriptions or dialogues related to Reporting From the School!",
+      "candados": [
+        {
+          "id": "1a-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿qué pasó la semana pasada?",
+          "textoAudio": "Last week, our school had a fair. There were many people.",
+          "opciones": ["a fair", "a trip", "a party"],
+          "respuesta": "a fair",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-2",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha y responde: ¿qué hubo?",
+          "textoAudio": "What happened at the parade? There was a big parade downtown.",
+          "opciones": ["parade", "fair", "interview"],
+          "respuesta": "parade",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "1a-3",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona 'news'.",
+          "textoAudio": "News, news! We have big news today. This news is exciting!",
+          "pregunta": "How many times do you hear 'news'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "FP3",
+      "piezaClave": "🔑1"
+    },
+    {
+      "id": "1b",
+      "theme": "Our Community Is Famous For...",
+      "destreza": "Vocabulary/Reading",
+      "learningOutcome": "Can identify at least 10 key vocabulary words when listening to simple descriptions or dialogues related to Our Community Is Famous For...",
+      "candados": [
+        {
+          "id": "1b-1",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TEBLEROACIN",
+          "respuesta": "CELEBRATION",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "EDLINEHA",
+          "respuesta": "HEADLINE",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "1b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "Our community is famous for its festival. There was a big celebration last year.",
+          "pregunta": "What is the community famous for?",
+          "opciones": ["its festival", "its library", "its market"],
+          "respuesta": "its festival",
+          "pistaCodigo": "Toma la primera letra de 'Festival'."
+        }
+      ],
+      "codigoEstacion": "CH2",
+      "piezaClave": "🔑2"
+    }
+  ],
+  "codigoMaestroParcial": ["FP3", "CH2"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 6to grado (Scenario 'Our Community News', A2.1).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

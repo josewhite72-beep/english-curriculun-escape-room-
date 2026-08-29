@@ -1,0 +1,89 @@
+{
+  "grado": "6",
+  "cefr": "A2.1",
+  "scenario": "Our Local Library",
+  "salaId": "sala3",
+  "titulo": "Sala 3: Our Local Library",
+  "vocabularioScenario": ["library", "book", "shelf", "catalog", "borrow", "return", "due date", "quiet", "read", "study"],
+  "gramaticaScenario": ["How to + verb (e.g., 'How to find a book')", "Prepositions of place (e.g., 'The shelf is next to the desk.')", "Can for ability (e.g., 'You can borrow three books.')"],
+  "fraseFuncional": ["Where can I find books about animals?", "The fiction section is on the left."],
+  "estaciones": [
+    {
+      "id": "3a",
+      "theme": "Let's Find a Book!",
+      "destreza": "Mediation",
+      "learningOutcome": "Can explain how to use library resources.",
+      "candados": [
+        {
+          "id": "3a-1",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "The book is on the shelf. You can borrow three books.",
+          "pregunta": "How many books can you borrow?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "3a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "OLOKACGAT",
+          "respuesta": "CATALOG",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3a-3",
+          "tipo": "mediacion-transferir",
+          "instruccion": "Lee la lista y cuenta cuántas palabras se mencionan.",
+          "textoLectura": "Library, book, shelf, catalog.",
+          "pregunta": "How many words are mentioned?",
+          "respuesta": "4",
+          "pistaCodigo": "El número es un dígito del código."
+        }
+      ],
+      "codigoEstacion": "CC4",
+      "piezaClave": "🔑5"
+    },
+    {
+      "id": "3b",
+      "theme": "How Do I Use the Library?",
+      "destreza": "Reading",
+      "learningOutcome": "Can identify at least 10 key vocabulary words when listening to simple descriptions or dialogues related to How Do I Use the Library?",
+      "candados": [
+        {
+          "id": "3b-1",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "The fiction section is on the left. Where can I find books about animals?",
+          "pregunta": "Where is the fiction section?",
+          "opciones": ["on the left", "on the right", "upstairs"],
+          "respuesta": "on the left",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "3b-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TUQIE",
+          "respuesta": "QUIET",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "3b-3",
+          "tipo": "lectura-corta",
+          "instruccion": "Lee el texto y responde.",
+          "textoLectura": "You can borrow three books. Please return them by the due date.",
+          "pregunta": "What must you do by the due date?",
+          "opciones": ["return them", "buy them", "read them"],
+          "respuesta": "return them",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        }
+      ],
+      "codigoEstacion": "LQ3",
+      "piezaClave": "🔑6"
+    }
+  ],
+  "codigoMaestroParcial": ["CC4", "LQ3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 6to grado (Scenario 'Our Local Library', A2.1).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}

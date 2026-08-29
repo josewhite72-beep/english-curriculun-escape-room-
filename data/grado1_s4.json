@@ -1,0 +1,85 @@
+{
+  "grado": "1",
+  "cefr": "A1.1",
+  "scenario": "My Family and I",
+  "salaId": "sala4",
+  "titulo": "Sala 4: My Family and I",
+  "vocabularioScenario": ["family", "mom", "dad", "brother", "sister", "aunt", "uncle", "cousin", "grandmother", "grandfather"],
+  "gramaticaScenario": ["Personal pronouns + verb (e.g., 'I am' 'She is')", "Possessive adjectives (e.g., 'my mom')", "WH-questions (e.g., 'Who is she/he?')"],
+  "fraseFuncional": ["She is my mom.", "He is my brother.", "Who is he?"],
+  "estaciones": [
+    {
+      "id": "4a",
+      "theme": "It's My Family!",
+      "destreza": "Writing",
+      "learningOutcome": "Can write other very familiar family-related words without assistance when labeling a family drawing (e.g., 'mom,' 'dad'). / Can draw pictures related to simple sentences they have written about family members.",
+      "candados": [
+        {
+          "id": "4a-1",
+          "tipo": "completar-oracion",
+          "instruccion": "Completa la oración.",
+          "oracion": "She is my ___.",
+          "opciones": ["mom", "brother", "dad"],
+          "respuesta": "mom",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4a-2",
+          "tipo": "ordenar-letras",
+          "instruccion": "Ordena las letras para formar la palabra correcta.",
+          "letrasDesordenadas": "TRHOREB",
+          "respuesta": "BROTHER",
+          "pistaCodigo": "Toma la primera letra de la palabra correcta."
+        },
+        {
+          "id": "4a-3",
+          "tipo": "escritura-corta",
+          "instruccion": "Escribe una oración corta usando la palabra 'dad' y la frase 'He is my...'",
+          "ejemploModelo": "He is my dad.",
+          "criterioValidacion": "La oración debe incluir la palabra 'dad' y la frase 'He is my'.",
+          "pistaCodigo": "Si el maestro valida tu oración, toma la letra 'D'."
+        }
+      ],
+      "codigoEstacion": "MB3",
+      "piezaClave": "🔑7"
+    },
+    {
+      "id": "4b",
+      "theme": "She Is My Mom!",
+      "destreza": "Listening + Speaking (cierre)",
+      "learningOutcome": "Can listen for and understand words related to greetings, leave-takings, and family members. / Can identify family members, using simple sentences (e.g., 'She is my mom.').",
+      "candados": [
+        {
+          "id": "4b-1",
+          "tipo": "listening-palabra",
+          "instruccion": "Escucha el audio y responde: ¿quién es ella?",
+          "textoAudio": "She is my mom. I love my mom.",
+          "opciones": ["mom", "sister", "aunt"],
+          "respuesta": "mom",
+          "pistaCodigo": "Toma la primera letra de la respuesta correcta."
+        },
+        {
+          "id": "4b-2",
+          "tipo": "listening-numerico",
+          "instruccion": "Escucha y cuenta cuántas veces se menciona la palabra 'mom'.",
+          "textoAudio": "Mom, mom! I love my mom. Mom is happy.",
+          "pregunta": "How many times do you hear 'mom'?",
+          "respuesta": "3",
+          "pistaCodigo": "El número es un dígito del código."
+        },
+        {
+          "id": "4b-3",
+          "tipo": "speaking-validada",
+          "instruccion": "Con tu compañero/a: pregunta 'Who is she?' y responde 'She is my mom.'",
+          "criterioValidacion": "El maestro valida oralmente que el equipo use la pregunta y respuesta correctamente.",
+          "pistaCodigo": "Si el maestro valida tu diálogo, toma la letra 'S'."
+        }
+      ],
+      "codigoEstacion": "MS3",
+      "piezaClave": "🔑8"
+    }
+  ],
+  "codigoMaestroParcial": ["MB3", "MS3"],
+  "notaContenido": "Vocabulario, gramatica y Learning Outcomes tomados directamente de los Theme Planners reales de 1er grado (Scenario 'My Family and I', A1.1).",
+  "metadata": { "marca": "PanaMentorLabs", "app": "Fuga de Aula", "version": "prototipo-1.0" }
+}
