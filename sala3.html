@@ -68,24 +68,57 @@
   .title{font-family:var(--font-display); font-weight:800; font-size:clamp(28px,8vw,36px); margin:6px 0 4px;}
   .subtitle{color:var(--ink-dim); font-size:13.5px; margin:0;}
 
-  .station-dots{display:flex; gap:8px; margin:16px 0 22px;}
+  .hud{
+    position:sticky; top:0; z-index:5;
+    background:rgba(20,27,46,0.82);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    margin:0 -20px 18px; padding:12px 20px 10px;
+  }
+  .hud-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px;}
+  .hud-locks{display:flex; gap:6px;}
+  .hud-lock{
+    width:30px; height:30px; border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; background:var(--panel-2); border:1.5px solid var(--line);
+    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+  .hud-lock.open{background:rgba(63,167,150,.22); border-color:var(--teal);}
+  .hud-lock.active{border-color:var(--brass); box-shadow:0 0 0 3px rgba(204,159,63,.22);}
+  .hud-lock.pop{animation:hudPop .4s ease;}
+  @keyframes hudPop{0%{transform:scale(1);}45%{transform:scale(1.28);}100%{transform:scale(1);}}
+  @media (prefers-reduced-motion: reduce){ .hud-lock.pop{animation:none;} }
+  .hud-keys{
+    display:flex; align-items:center; gap:6px; flex:none;
+    background:var(--panel-2); border:1px solid var(--line); border-radius:20px;
+    padding:6px 12px; font-family:var(--font-mono); font-size:13px; color:var(--brass); white-space:nowrap;
+  }
+  .station-dots{display:flex; gap:8px; margin:0;}
   .dot{flex:1; height:6px; border-radius:4px; background:var(--panel-2);}
   .dot.active{background:var(--brass);}
   .dot.done{background:var(--teal);}
 
-  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; margin-bottom:16px;}
+  .card{
+    background:rgba(30,43,71,0.22);
+    -webkit-backdrop-filter:blur(16px) saturate(1.2);
+    backdrop-filter:blur(16px) saturate(1.2);
+    border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px; margin-bottom:16px;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .card, .card *{ text-shadow:0 1px 5px rgba(0,0,0,.65), 0 1px 2px rgba(0,0,0,.5); }
   .station-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:4px;}
   .station-theme{font-family:var(--font-display); font-weight:700; font-size:19px;}
   .step-count{font-family:var(--font-mono); font-size:12px; color:var(--ink-dim);}
   .station-skill{font-size:12px; color:var(--brass); text-transform:uppercase; letter-spacing:.06em; margin:0 0 16px;}
 
-  .instruction{font-size:15px; margin:0 0 14px; line-height:1.5;}
+  .instruction{font-size:15px; margin:0 0 14px; line-height:1.5; color:#FFFFFF;}
   .passage{
-    background:var(--panel-2); border-radius:12px; padding:14px 16px; font-size:14.5px;
+    background:rgba(36,52,86,0.22); border-radius:12px; padding:14px 16px; font-size:14.5px;
     line-height:1.55; margin-bottom:14px; font-style:italic; color:var(--ink);
   }
   .audio-btn{
-    display:inline-flex; align-items:center; gap:8px; background:var(--panel-2);
+    display:inline-flex; align-items:center; gap:8px; background:rgba(36,52,86,0.22);
     border:1px solid var(--line); color:var(--ink); border-radius:10px; padding:10px 16px;
     font-size:14px; margin-bottom:16px;
   }
@@ -95,11 +128,11 @@
   }
   .scramble span{
     font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--brass);
-    background:var(--panel-2); border-radius:8px; padding:8px 12px;
+    background:rgba(36,52,86,0.22); border-radius:8px; padding:8px 12px;
   }
   .options{display:flex; flex-direction:column; gap:10px; margin-bottom:8px;}
   .opt-btn{
-    text-align:left; background:var(--panel-2); border:1.5px solid var(--line); color:var(--ink);
+    text-align:left; background:rgba(36,52,86,0.22); border:1.5px solid var(--line); color:var(--ink);
     border-radius:12px; padding:13px 16px; font-size:15px;
   }
   .opt-btn:hover{border-color:var(--brass);}
@@ -108,7 +141,7 @@
   .opt-btn:disabled{cursor:default;}
   .text-input-row{display:flex; gap:10px; margin-bottom:8px;}
   .text-input-row input{
-    flex:1; background:var(--panel-2); border:1.5px solid var(--line); border-radius:10px;
+    flex:1; background:rgba(36,52,86,0.22); border:1.5px solid var(--line); border-radius:10px;
     color:var(--ink); font-family:var(--font-mono); font-size:16px; padding:11px 14px; text-transform:uppercase;
   }
   .btn-check{
@@ -143,7 +176,13 @@
     <p class="subtitle" id="salaSubtitle">Cargando…</p>
   </div>
 
-  <div class="station-dots" id="stationDots"></div>
+  <div class="hud">
+    <div class="hud-row">
+      <div class="hud-locks" id="hudLocks"></div>
+      <div class="hud-keys">🔑 <span id="hudKeysCount">0</span>/8</div>
+    </div>
+    <div class="station-dots" id="stationDots"></div>
+  </div>
 
   <div id="content"></div>
 </div>
@@ -192,6 +231,7 @@
       stationIdx = sala.estaciones.findIndex(function(e){ return !state.estacionesCompletadas[e.id]; });
       if(stationIdx === -1) stationIdx = sala.estaciones.length; // todo completo
       renderDots();
+      renderHudKeys();
       renderStation();
       updateMapMarker();
     })
@@ -244,15 +284,48 @@
     state.candadosCompletados[candId] = true;
     saveState();
     updateMapMarker();
+    popHudLock(candId);
+  }
+
+  function renderHudLocks(est){
+    var wrap = document.getElementById('hudLocks');
+    if(!wrap) return;
+    wrap.innerHTML = '';
+    est.candados.forEach(function(c, i){
+      var done = isCandadoDone(est.id, c.id);
+      var el = document.createElement('div');
+      el.className = 'hud-lock' + (done ? ' open' : '') + (!done && i === candadoIdx ? ' active' : '');
+      el.dataset.candId = c.id;
+      el.textContent = done ? '🔓' : '🔒';
+      wrap.appendChild(el);
+    });
+  }
+
+  function popHudLock(candId){
+    var el = document.querySelector('.hud-lock[data-cand-id="' + candId + '"]');
+    if(el){
+      el.textContent = '🔓';
+      el.classList.add('open', 'pop');
+      el.classList.remove('active');
+    }
+  }
+
+  function renderHudKeys(){
+    var el = document.getElementById('hudKeysCount');
+    if(!el) return;
+    var count = state.estacionesCompletadas ? Object.keys(state.estacionesCompletadas).length : 0;
+    el.textContent = count;
   }
   function markEstacionCompleta(est){
     state.estacionesCompletadas[est.id] = true;
     saveState();
     renderDots();
+    renderHudKeys();
     renderReward(est);
   }
 
   function renderCandado(est, cand){
+    renderHudLocks(est);
     var content = document.getElementById('content');
     var html = '<div class="card">';
     html += '<div class="station-head"><span class="station-theme">' + est.theme + '</span>' +
