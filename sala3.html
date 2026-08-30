@@ -326,6 +326,7 @@
   function renderCandado(est, cand){
     renderHudLocks(est);
     var content = document.getElementById('content');
+    var esManual = (cand.tipo === 'speaking-validada' || cand.tipo === 'escritura-corta');
     var html = '<div class="card">';
     html += '<div class="station-head"><span class="station-theme">' + est.theme + '</span>' +
             '<span class="step-count">Candado ' + (candadoIdx+1) + '/' + est.candados.length + '</span></div>';
@@ -342,7 +343,18 @@
       html += '<div class="scramble">' + cand.letrasDesordenadas.split('').map(function(ch){ return '<span>'+ch+'</span>'; }).join('') + '</div>';
     }
 
-    if(cand.opciones){
+    if(esManual){
+      if(cand.ejemploModelo){
+        html += '<div class="passage">Ejemplo: ' + cand.ejemploModelo + '</div>';
+      }
+      if(cand.tipo === 'escritura-corta'){
+        html += '<div class="text-input-row"><input type="text" id="textAnswer" placeholder="Escribe tu oración" autocomplete="off"></div>';
+      }
+      if(cand.criterioValidacion){
+        html += '<p class="step-count" style="margin-bottom:12px;">' + cand.criterioValidacion + '</p>';
+      }
+      html += '<button class="btn-check" id="teacherValidateBtn" style="width:100%; padding:13px;">✓ El maestro validó esto</button>';
+    } else if(cand.opciones){
       html += '<div class="options" id="optionsWrap">';
       cand.opciones.forEach(function(op){
         html += '<button class="opt-btn" data-val="' + op.replace(/"/g,'&quot;') + '">' + op + '</button>';
@@ -369,7 +381,11 @@
       });
     }
 
-    if(cand.opciones){
+    if(esManual){
+      document.getElementById('teacherValidateBtn').addEventListener('click', function(){
+        handleCorrecto(cand, null, null);
+      });
+    } else if(cand.opciones){
       var buttons = content.querySelectorAll('.opt-btn');
       buttons.forEach(function(btn){
         btn.addEventListener('click', function(){
@@ -387,28 +403,33 @@
     }
   }
 
+  function handleCorrecto(cand, buttons, clickedBtn){
+    var fb = document.getElementById('feedback');
+    fb.textContent = '¡Correcto! ✓';
+    fb.className = 'feedback ok';
+    if(clickedBtn) clickedBtn.classList.add('correct');
+    markCandadoDone(cand.id);
+    document.getElementById('nextBtn').hidden = false;
+    document.getElementById('nextBtn').addEventListener('click', function(){
+      candadoIdx++;
+      var est = sala.estaciones[stationIdx];
+      if(candadoIdx >= est.candados.length){
+        markEstacionCompleta(est);
+      } else {
+        renderCandado(est, est.candados[candadoIdx]);
+      }
+    });
+  }
+
   function evaluate(cand, value, buttons, clickedBtn){
     var correct = String(value).trim().toLowerCase() === String(cand.respuesta).trim().toLowerCase();
-    var fb = document.getElementById('feedback');
     if(buttons){
       buttons.forEach(function(b){ b.disabled = true; });
     }
     if(correct){
-      fb.textContent = '¡Correcto! ✓';
-      fb.className = 'feedback ok';
-      if(clickedBtn) clickedBtn.classList.add('correct');
-      markCandadoDone(cand.id);
-      document.getElementById('nextBtn').hidden = false;
-      document.getElementById('nextBtn').addEventListener('click', function(){
-        candadoIdx++;
-        var est = sala.estaciones[stationIdx];
-        if(candadoIdx >= est.candados.length){
-          markEstacionCompleta(est);
-        } else {
-          renderCandado(est, est.candados[candadoIdx]);
-        }
-      });
+      handleCorrecto(cand, buttons, clickedBtn);
     } else {
+      var fb = document.getElementById('feedback');
       fb.textContent = 'Intenta de nuevo.';
       fb.className = 'feedback bad';
       if(clickedBtn){
