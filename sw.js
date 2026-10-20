@@ -1,4 +1,4 @@
-const CACHE_NAME = "fuga-de-aula-v1";
+const CACHE_NAME = "fuga-de-aula-v2";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
